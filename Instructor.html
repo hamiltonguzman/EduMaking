@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/maincss.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <link rel="icon" href="Imagen/Logo.png">
+    <title>EduMaking-CRM - Instructor</title>
+</head>
+<body>
+    <div class="cuerpoCompleto">
+        <header>
+            <div class="cabeza">
+                <img src="Imagen/logoEslogan1.png" >
+            </div>
+            
+        </header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">EduMaking Nav</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Contacto</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Instructor</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Cursos</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Inscripcion
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Editar</a></li>
+                      <li><a class="dropdown-item" href="#">Borrar</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                  <!--<li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                  </li> -->
+                </ul>
+              </div>
+            </div>
+          </nav>
+        <div class="contenido">
+          <div class="form">
+                
+            <div class="tab-content">
+                <h1>Instructor</h1>
+            
+                <form action="/contacto" method="post">
+            
+                    <div class="top-row">
+                        <div class="field-wrap">
+                            <label>Nombre<span class="req">*</span></label>
+                            <input type="email" required autocomplete="off" />
+                        </div>
+                        <div class="field-wrap">
+                            <label>Telefono<span class="req">*</span></label>
+                            <input type="text"required autocomplete="off"/>
+                        </div>
+                        <div class="field-wrap">
+                            <label>Correo<span class="req">*</span></label>
+                            <input type="text" required autocomplete="off" />
+                        </div>
+                    </div>
+                        
+                    <div class="field-wrap">
+                        <label>Profesion<span class="req">*</span></label>
+                        <input type="text"required autocomplete="on"/>
+                    </div>
+                    
+                    <div class="field-wrap">
+                        <label>Experiencia<span class="req">*</span></label>
+                        <input type="text"required autocomplete="off"/>
+                    </div>
+
+                    <div class="field-wrap">
+                        <label>Ciudad<span class="req">*</span></label>
+                        <input type="text"required autocomplete="on"/>
+                    </div>
+                    
+                    <div class="field-wrap">
+                        <label>Pais<span class="req">*</span></label>
+                        <input type="text"required autocomplete="off"/>
+                    </div>
+                    <div class="field-wrap">
+                        <label>Cedula<span class="req">*</span></label>
+                        <input type="text"required autocomplete="on"/>
+                    </div>
+                    
+                                                                    
+                    <div class="field-wrap">
+                        <label>Estado del Instructor<span class="req">*</span></label>
+                        <select name="estado" id="estado">
+                            <option value="Nuevo">Activo</option>
+                            <option value="Abierto">Inactivo</option>
+                            
+                        </select>
+                    </div>
+            
+                    <button type="submit" class="button button-block"/>Crear Instructor</button>
+            
+                </form>
+                
+            </div><!-- tab-content -->
+            
+        </div> <!-- /form -->
+        </div>
+        <footer>
+            <div id="footer_wrapper">
+                <div id="footer">
+                    Copyright © 2021 <a href="#">EduMaking</a> - Design: <a href="#">Grupo 7</a>
+                </div> <!-- end of footer -->
+           </div> 
+        </footer>
+
+    </div>
+</body>
+</html>
