@@ -100,7 +100,7 @@ create table ciudad (
 );
 
 /*Insertamos uno de los usuarios del sistema*/
-INSERT INTO usuarios (1,'Olga patricia Bravo carvajal','Activo','admin123','olga.bravo@o365.unab.edu.co');
+INSERT INTO usuarios VALUES (1,'Olga patricia Bravo carvajal','Activo','admin123','olga.bravo@o365.unab.edu.co');
 /*Insertamos las profesiones, si hay necesidad debera ingresarse despues*/
 INSERT INTO profesiones VALUES (1,'Informática y ciencias de la computación');
 INSERT INTO profesiones VALUES (2,'Ingeniería ambiental y sanitario');
