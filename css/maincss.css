@@ -111,13 +111,14 @@ input:focus {
 #footer {
 	width: 900px;
 	margin: 0 auto;
-	padding: 20px 35px;
-	text-align: center;
+	padding-left : 0%; /* diseño responsive harold */
+  text-align: center; /* diseño responsive harold */
 	color: #8ab6d1;
 }
 
 #footer a {
 	color: #b4d8ee;
+  margin: 0 auto;
 }
 
 .boton {
