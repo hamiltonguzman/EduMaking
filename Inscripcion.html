@@ -12,12 +12,11 @@
     <title>EduMaking-CRM - Inscripción</title>
 </head>
 <body>
-    <div class="cuerpoCompleto">
+    <div class="cuerpoCompleto" display= "flex" justify-content= "center">
         <header>
             <div class="cabeza">
                 <img src="Imagen/logoEslogan1.png" >
             </div>
-            
         </header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
@@ -58,46 +57,73 @@
           <div class="form">
                 
             <div class="tab-content">
-                <h1>Inscripcion</h1>
+                <h1> </h1>
             
                 <form action="/contacto" method="post">
-            
-                    <div class="top-row">
-                        <div class="field-wrap">
-                            <label>Nombre del Curso<span class="req">*</span></label>
-                            <input type="email" required autocomplete="off" />
-                        </div>
-                        <div class="field-wrap">
-                            <label>Nombre Instructor<span class="req">*</span></label>
-                            <input type="text"required autocomplete="off"/>
-                        </div>
-                        <div class="field-wrap">
-                            <label>Nombre estudiante<span class="req">*</span></label>
-                            <input type="text" required autocomplete="off" />
-                        </div>
-                    </div>
-                        
-                    
-                    <label for="start">Fecha Inicio:</label>
-                    <input type="date" id="start" name="trip-start"
-                     value="2018-07-22"
-                    min="2000-01-01" max="2050-12-31">
 
-                    <label for="start">Fecha Fin:</label>
-                    <input type="date" id="start" name="trip-start"
-                     value="2018-07-22"
-                    min="2000-01-01" max="2050-12-31">
-                                                                    
-                    <div class="field-wrap">
-                        <label>Certificado<span class="req">*</span></label>
-                        <select name="estado" id="estado">
-                            <option value="Nuevo">Entregado</option>
-                            <option value="Abierto">No Entregado</option>
+                    <div class="card">
+                        <h5 class="card-header rounded-top d-flex justify-content-center">Inscripción</h5>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 col-sm-6 mb-3">
+                                    <label for="nombrecurso">Nombre del Curso<span class="req">*</span></label>
+                                    <!--input type="text" id="nombrecurso" name="nombrecurso" required autocomplete="off" class="form-control"-->
+                                    <select name="nombrecurso" id="nombrecurso" class="form-control">
+                                      <option value="">Seleccione...</option>
+                                      <option value="Mecánica Básica">Mecánica Básica</option>
+                                      <option value="Electricidad">Electricidad</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-12 col-sm-6 mb-3">
+                                    <label for="nombreinstructor">Nombre del Instructor<span class="req">*</span></label>
+                                    <!--input type="text" id="nombreinstructor" name="nombreinstructor" required autocomplete="off" 
+                                      class="form-control"-->
+                                      <select name="nombreinstructor" id="nombreinstructor" class="form-control">
+                                        <option value="">Seleccione...</option>
+                                        <option value="Harold Medina">Harold Medina</option>
+                                        <option value="No asignado">No asignado</option>
+                                      </select>
+                                </div>
+                            </div>
                             
-                        </select>
+                            <div class="mb-3">
+                                <label for="nombreestudiante">Nombre del Estudiante<span class="req">*</span></label>
+                                <input type="text" id="nombreestudiante" name="nombreestudiante" required autocomplete="off" 
+                                  class="form-control">
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-12 col-sm-4 mb-3">
+                                    <label for="finicio">Fecha Inicio<span class="req">*</span></label>
+                                    <input type="date" id="finicio" name="finicio" value="2021-01-01" min="2000-01-01" max="2050-12-31" class="form-control">
+                                </div>
+
+                                <div class="col-12 col-sm-4 mb-3">
+                                    <label for="ffin">Fecha Fin<span class="req">*</span></label>
+                                    <input type="date" id="ffin" name="ffin" value="2021-01-01" min="2000-01-01" max="2050-12-31" class="form-control">
+                                </div>
+
+                                <div class="col-12 col-sm-4 mb-3">
+                                    <label for="estadocertif">Certificado<span class="req">*</span></label>
+                                    <select name="estadocertif" id="estadocertif" class="form-control">
+                                        <option value="">Seleccione...</option>
+                                        <option value="Nuevo">Entregado</option>
+                                        <option value="Abierto">No Entregado</option>
+                                    </select>
+                                </div>
+                            </div>
+                           
+                            <!--a href="#" class="btn btn-primary">Crear Inscripcion</a-->
+                            
+                        </div>
                     </div>
-            
-                    <button type="submit" class="button button-block"/>Crear Inscripcion</button>
+
+                    <!--hr class="mb-4"-->
+                    <div class="boton">
+                      <button type="submit" class="btn btn-primary">Crear Inscripcion</button>
+                    </div>
+                    <!--button type="submit" class="button button-block"/>Crear Inscripcion</button-->
             
                 </form>
                 
@@ -112,7 +138,6 @@
                 </div> <!-- end of footer -->
            </div> 
         </footer>
-
     </div>
 </body>
 </html>
