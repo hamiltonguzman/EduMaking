@@ -12,12 +12,11 @@
     <title>EduMaking-CRM - Instructor</title>
 </head>
 <body>
-    <div class="cuerpoCompleto">
+    <div class="cuerpoCompleto" display= "flex" justify-content= "center">
         <header>
             <div class="cabeza">
                 <img src="Imagen/logoEslogan1.png" >
             </div>
-            
         </header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
@@ -28,92 +27,121 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Contacto</a>
+                    <a class="nav-link" href="Contactos Persona.html">Contacto</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Instructor</a>
+                    <a class="nav-link active" aria-current="page"href="Instructor.html">Instructor</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Cursos</a>
+                    <a class="nav-link" href="Curso.html">Cursos</a>
                   </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Inscripcion
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="#">Editar</a></li>
-                      <li><a class="dropdown-item" href="#">Borrar</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
+                  <li class="nav-item">
+                    <a class="nav-link" href="Inscripcion.html">Inscripción</a>
                   </li>
-                  <!--<li class="nav-item">
-                    <a class="nav-link disabled">Disabled</a>
-                  </li> -->
                 </ul>
               </div>
             </div>
           </nav>
         <div class="contenido">
           <div class="form">
-                
+ 
             <div class="tab-content">
-                <h1>Instructor</h1>
+                <h1></h1>
             
                 <form action="/contacto" method="post">
-            
-                    <div class="top-row">
-                        <div class="field-wrap">
-                            <label>Nombre<span class="req">*</span></label>
-                            <input type="email" required autocomplete="off" />
+                  <!-- Estos son estilos de bootstrap y comienza con la clase CARD como un contenedor para todos los campos junto con la clase CARD-BODY --ANDERSON -->
+                  <div class="card">
+                    <h5 class="card-header rounded-top d-flex justify-content-center">Instructor</h5>
+                    <div class="card-body">
+                      <!-- nos ayuda a colocar los campor CEDULA y  ESTADO en una sola linea con los clases COL-12 COL-SM-6 --ANDERSON-->  
+                      <div class="row">
+                            <div class="col-12 col-sm-6 mb-3">
+                              <label for="cedula">Cédula<span class="req">*</span></label>
+                              <input type="text" id="cedula" name="cedula" required autocomplete="off" class="form-control">
+                            </div>
+                            <div class="col-12 col-sm-6 mb-3">
+                              <label for="estado">Estado<span class="req">*</span></label>
+                              <!-- este es un campo de seleccion tal como lo he PAIS y CIUDAD  --ANDERSON-->  
+                              <select name="estado" id="estado" class="form-control">
+                                <option value="">Seleccione...</option>
+                                <option value="Activo">Activo</option>
+                                <option value="Inactivo">Inactivo</option>
+                              </select>
+                            </div>
                         </div>
-                        <div class="field-wrap">
-                            <label>Telefono<span class="req">*</span></label>
-                            <input type="text"required autocomplete="off"/>
-                        </div>
-                        <div class="field-wrap">
-                            <label>Correo<span class="req">*</span></label>
-                            <input type="text" required autocomplete="off" />
-                        </div>
-                    </div>
-                        
-                    <div class="field-wrap">
-                        <label>Profesion<span class="req">*</span></label>
-                        <input type="text"required autocomplete="on"/>
-                    </div>
-                    
-                    <div class="field-wrap">
-                        <label>Experiencia<span class="req">*</span></label>
-                        <input type="text"required autocomplete="off"/>
-                    </div>
 
-                    <div class="field-wrap">
-                        <label>Ciudad<span class="req">*</span></label>
-                        <input type="text"required autocomplete="on"/>
-                    </div>
-                    
-                    <div class="field-wrap">
-                        <label>Pais<span class="req">*</span></label>
-                        <input type="text"required autocomplete="off"/>
-                    </div>
-                    <div class="field-wrap">
-                        <label>Cedula<span class="req">*</span></label>
-                        <input type="text"required autocomplete="on"/>
-                    </div>
-                    
-                                                                    
-                    <div class="field-wrap">
-                        <label>Estado del Instructor<span class="req">*</span></label>
-                        <select name="estado" id="estado">
-                            <option value="Nuevo">Activo</option>
-                            <option value="Abierto">Inactivo</option>
-                            
-                        </select>
-                    </div>
-            
-                    <button type="submit" class="button button-block"/>Crear Instructor</button>
-            
-                </form>
+                        <div class="mb-3">
+                          <label for="nombreinstructor">Nombre del Instructor<span class="req">*</span></label>
+                          <input type="text" id="nombreinstructor" name="nombreinstructor" required autocomplete="off" 
+                          class="form-control">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 col-sm-6 mb-3">
+                              <label for="telefono">Teléfono<span class="req">*</span></label>
+                              <input type="text" id="telefono" name="telefono" required autocomplete="off" class="form-control">
+                            </div>
+                            <div class="col-12 col-sm-6 mb-3">
+                              <label for="correo">Correo Electrónico<span class="req">*</span></label>
+                              <input type="email" id="correo" name="correo" required autocomplete="off" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="profesion">Profesion<span class="req">*</span></label>
+                          <select name="profesion" id="profesion" class="form-control">
+                            <option value="">Seleccione...</option>
+                            <option value="IngenieroCivil">Ingeniero civil</option>
+                            <option value="IngenieroPetroleos">Ingeniero de Petroleos</option>
+                            <option value="IngenieroHidrico">Ingeniero de recursos hídricos y gestión ambiental</option>
+                          </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                          <label for="experiencia">Incluya la experiencia laboral del instructor.<span class="req">*</span></label>
+                          <input type="text" id="experiencia" name="experiencia" required autocomplete="off" class="form-control">
+                        </div>
+                        
+                        <div class="row">
+                          <div class="col-12 col-sm-6 mb-3">
+                              <label for="pais">Pais<span class="req">*</span></label>
+                              <select name="pais" id="pais" class="form-control">
+                                <option value="">Seleccione...</option>
+                                <option value="Colombia">Cololmbia</option>
+                                <option value="España">España</option>
+                              </select>
+                          </div>
+                          
+                          <div class="col-12 col-sm-6 mb-3">
+                              <label for="ciudad">ciudad<span class="req">*</span></label>
+                                <select name="ciudad" id="ciudad" class="form-control">
+                                  <option value="">Seleccione...</option>
+                                  <option value="Bucaramanga">Bucaramanga</option>
+                                  <option value="Barrancabermeja">Barrancabermeja</option>
+                                  <option value="Bogota">Bogotá</option>
+                                  <option value="Madrid">Madrid</option>
+                                </select>
+                          </div>
+                        </div>
+                    </div> <!-- CARD-BODY cerramos clase CARD-BODY del formulario principal --ANDERSON-->
+                  </div> <!-- CARD cerramos clase CARD del formulario principal  --ANDERSON-->
+                  <!-- Se borro el anterio boton y se incluyeron estos con los estilos de bootstrap  --ANDERSON-->
+                  <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="boton col-sm-4">
+                              <button type="submit" class="btn btn-primary">Registrar</button>
+                            </div>
+                            <div class="boton col-sm-4">
+                              <button type="submit" class="btn btn-primary">Modificar</button>
+                            </div>
+                            <div class="boton col-sm-4">
+                              <button type="submit" class="btn btn-primary">Eliminar</button>
+                            </div>
+                        </div>
+                      </div> <!-- CARD-BODY cerramos clase CARD-BODY de los botones  --ANDERSON-->
+                    </div>  <!-- CARD cerramos clase CARD de los botones  --ANDERSON-->
+                 </form>
                 
             </div><!-- tab-content -->
             
