@@ -14,15 +14,24 @@ body {
 
 .cabeza {
   background-color:white ;
+  width: 70%; /* adicionado harold */
+}
+
+/* creado harold */
+.cabeza > img {
+  width: 100%;
 }
 
 /* creado harold */
 .contenido {
-  width: 800px;
+  /*width: 800px;*/
+  width: 50%;
   margin: 0px auto;
   padding-left: 0%;
+  /* padding-right: 0%; */
 }
 
+/* creado harold */
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
