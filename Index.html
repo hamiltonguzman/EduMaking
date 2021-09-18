@@ -9,15 +9,14 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
     <link rel="icon" href="Imagen/Logo.png">
-    <title>EduMaking-CRM</title>
+    <title>EduMaking-CRM - Inicio Sesion</title>
 </head>
 <body>
-    <div class="cuerpoCompleto">
+    <div class="cuerpoCompleto" display= "flex" justify-content= "center">
         <header>
             <div class="cabeza">
                 <img src="Imagen/logoEslogan1.png" >
-            </div>
-            
+            </div>  
         </header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
@@ -25,31 +24,21 @@
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
+              <!--se modifica el menu y se inactivan con el metodo DISABLED los menus ya que ninguno pueda ser accesible-->
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Contacto</a>
+                    <a class="nav-link disabled" href="Contactos Persona.html">Contacto</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Instructor</a>
+                    <a class="nav-link disabled" href="Instructor.html">Instructor</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Cursos</a>
+                    <a class="nav-link disabled" href="Curso.html">Cursos</a>
                   </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Inscripcion
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="#">Editar</a></li>
-                      <li><a class="dropdown-item" href="#">Borrar</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" href="Inscripcion.html">Inscripción</a>
                   </li>
-                  <!--<li class="nav-item">
-                    <a class="nav-link disabled">Disabled</a>
-                  </li> -->
                 </ul>
               </div>
             </div>
@@ -72,7 +61,7 @@
                 <label class="login-field-icon fui-lock" for="login-pass"></label>
                 </div>
         
-                <a class="btn btn-primary btn-large btn-block" href="Contactos.html">LOGIN</a>
+                <a class="btn btn-primary btn-large btn-block" href="MenuInicio.html">LOGIN</a>
                 <a class="login-link" href="#">Recuperar Contraseña</a>
               </div>
             </div>

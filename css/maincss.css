@@ -30,6 +30,9 @@ body {
   padding-left: 0%;
   /* padding-right: 0%; */
 }
+.contenido img{
+  width: 100%;
+}
 
 /* creado harold */
 .card {
