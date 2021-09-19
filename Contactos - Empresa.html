@@ -12,12 +12,11 @@
     <title>EduMaking-CRM - Contacto Empresa</title>
 </head>
 <body>
-    <div class="cuerpoCompleto">
+    <div class="cuerpoCompleto" display= "flex" justify-content= "center">
         <header>
             <div class="cabeza">
                 <img src="Imagen/logoEslogan1.png" >
             </div>
-            
         </header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
@@ -58,75 +57,134 @@
           <div class="form">
                 
             <div class="tab-content">
-                <h1>Contacto - Empresa</h1>
+                <h1> </h1>
             
                 <form action="/contacto" method="post">
-            
-                    <div class="top-row">
-                        <div class="field-wrap">
-                            <label>Nombre Empresa<span class="req">*</span></label>
-                            <input type="email" required autocomplete="off" />
-                        </div>
-                        
-                        <div class="field-wrap">
-                          <label>Nombre contacto<span class="req">*</span></label>
-                          <input type="text"required autocomplete="off"/>
-                      </div>
 
-                        <div class="field-wrap">
-                            <label>Telefono contacto<span class="req">*</span></label>
-                            <input type="text"required autocomplete="off"/>
-                        </div>
-                        <div class="field-wrap">
-                            <label>Correo Contacto<span class="req">*</span></label>
-                            <input type="text" required autocomplete="off" />
-                        </div>
-                    </div>
-                        
-                    <div class="field-wrap">
-                        <label>Cargo<span class="req">*</span></label>
-                        <input type="text"required autocomplete="on"/>
-                    </div>
-                    
-                                      
-                    <div class="field-wrap">
-                        <label>Clasificacion<span class="req">*</span></label>
-                        <select name="etapa" id="etapa">
-                            <option value="clientenew">Cliente</option>
-                            <option value="Lead">Prospecto</option>
-                           
-                        </select>
-                    </div>
+                    <div class="card">
+                        <h5 class="card-header rounded-top d-flex justify-content-center">Contacto Empresa</h5>
+                        <div class="card-body">
+                            <div class="row">
+                              <div class="col-12 col-sm-6 mb-3">
+                                <label for="empresa">Empresa<span class="req">*</span></label>
+                                <select name="empresa" id="empresa" class="form-control">
+                                  <option value="">Seleccione...</option>  
+                                  <option value="biosc">BioSC</option>
+                                  <option value="ecopetrol">Ecopetrol</option>
+                                  <option value="inemec">Inemec</option>
+                                  <option value="promigas">Promigas</option>
+                                  <option value="relianz">Realianz</option>
+                                          
+                                </select>
+                               
+                                  </div>
+                                
 
-                    <div class="field-wrap">
-                        <label>Ciudad<span class="req">*</span></label>
-                        <input type="text"required autocomplete="on"/>
-                    </div>
-                    
-                    <div class="field-wrap">
-                        <label>Pais<span class="req">*</span></label>
-                        <input type="text"required autocomplete="off"/>
-                    </div>
-                    <div class="field-wrap">
-                        <label>NIT<span class="req">*</span></label>
-                        <input type="text"required autocomplete="on"/>
-                    </div>
-                    
-                    <div class="field-wrap">
-                        <label>RUT<span class="req">*</span></label>
-                        <input type="text"required autocomplete="off"/>
-                    </div>
 
-                    <div class="field-wrap">
-                        <label>Estado del contacto<span class="req">*</span></label>
-                        <select name="estado" id="estado">
-                            <option value="Nuevo">Activo</option>
-                            <option value="Abierto">Inactivo</option>
+
+
+                                <div class="col-12 col-sm-6 mb-3">
+                                    <label for="contacto">Contacto<span class="req">*</span></label>
+                                    <input type="text"required autocomplete="on" placeholder="Digite nombre del contacto"/>
+                                </div>
+                              <div class="col-12 col-sm-6 mb-3">
+                                  <label for="teléfono">Telefono<span class="req">*</span></label>
+                                  <input type="text"required autocomplete="on" placeholder="Digite el teléfono del conctacto"/>
+                              </div>
+
+                            <div class="col-12 col-sm-6 mb-3">
+                                <label for="correo">Correo<span class="req">*</span></label>
+                                <input type="text"required autocomplete="on" placeholder="Digite el correo del conctacto"/>
+                            </div>
+
+                            <div class="col-12 col-sm-6 mb-3">
+                              <label for="cargo">Cargo<span class="req">*</span></label>
+                              <input type="text"required autocomplete="on" placeholder="Digite el cargo"/>
+                            </div>
+                          
+                            <div class="col-12 col-sm-3 mb-3">
+                              <label for="clasif">Clasificación<span class="req">*</span></label>
+                              <select name="etapa" id="etapa" class="form-control">
+                                <option value="cliente">Cliente</option>
+                                <option value="prospecto">Prospecto</option>
+                                                                     
+                            </select>
+                            </div>
+
+                            <div class="col-12 col-sm-4 mb-3">
+                              <label>Ciudad<span class="req">*</span></label>
+                              <select name="ciudad" id="ciudad" class="form-control">
+                                <option value="">Seleccione...</option>
+                                <option value="bermeja">Barrancabermeja</option>
+                                <option value="Bogota">Bogota</option>
+                                <option value="Brasilia">Brasilia</option>
+                                <option value="bmanga">Bucaramanga</option>
+                                <option value="Cali">Cali</option>
+                                <option value="Medellin">Medellin</option>
+                                <option value="riodejaneiro">Rio de Janeiro</option>
+                                <option value="SantiagodeChile">Santiago de Chile</option>
+                                <option value="Saopaulo">Sao Paulo</option>
+                                <option value="Vina">Viña del mar</option>
                             
-                        </select>
+                            
+                              </select>
+                            </div>
+
+                          
+
+                          <div class="col-12 col-sm-4 mb-3">
+                            <label for="pais">Pais<span class="req">*</span></label>
+                            <select name="pais" id="pais" class="form-control">
+                              <option value="">Seleccione...</option>
+                              <option value="brasil">Brasil</option>
+                              <option value="chile">Chile</option>
+                              <option value="colombia">Colombia</option>
+                              
+                           
+                          </select>
+                          </div>
+
+                          <div class="col-12 col-sm-6 mb-3">
+                            <label for="nit">Nit<span class="req">*</span></label>
+                            <input type="text"required autocomplete="on" placeholder="Digite el nit"/>
+                          </div>
+
+                          <div class="col-12 col-sm-6 mb-3">
+                            <label for="rut">Rut<span class="req">*</span></label>
+                            <input type="text"required autocomplete="on" placeholder="Digite el rut"/>
+                          </div>
+
+                          <div class="col-12 col-sm-4 mb-3">
+                            <label>Estado del contacto<span class="req">*</span></label>
+                              <select name="contacto" id="contacto" class="form-control">
+                                  <option value="clienteant">Activo</option>
+                                  <option value="clientenew">Inactivo</option>
+                                     
+                              </select>
+
+                          </div>
+                        </div>   <!--a href="#" class="btn btn-primary">Crear Inscripcion</a-->
+                            
+                        </div>
                     </div>
-            
-                    <button type="submit" class="button button-block">Crear Contacto</button>
+
+                    <!--hr class="mb-4"-->
+                    <div class="card">
+                      <div class="card-body">
+                          <div class="row">
+                              <div class="boton col-sm-4">
+                                <button type="submit" class="btn btn-primary">Registrar</button>
+                              </div>
+                              <div class="boton col-sm-4">
+                                <button type="submit" class="btn btn-primary">Modificar</button>
+                              </div>
+                              <div class="boton col-sm-4">
+                                <button type="submit" class="btn btn-primary">Eliminar</button>
+                              </div>
+                          </div>
+                        </div> <!-- CARD-BODY cerramos clase CARD-BODY de los botones  --ANDERSON-->
+                      </div>
+                    <!--button type="submit" class="button button-block"/>Crear Inscripcion</button-->
             
                 </form>
                 
@@ -141,7 +199,6 @@
                 </div> <!-- end of footer -->
            </div> 
         </footer>
-
     </div>
 </body>
 </html>
