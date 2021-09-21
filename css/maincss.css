@@ -197,13 +197,9 @@ input:focus {
   width: 9%;
 }
 
-tbody tr:nth-child(odd) {
-  background: #eee;
-}
-
-tbody tr:hover {
-  background: rgb(168, 199, 181);
-}
+/*tbody tr:hover {
+  background: rgb(241, 195, 238);
+}*/
 
 /*thead th:nth-child(9) {
   width: 5%;
