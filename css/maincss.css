@@ -202,7 +202,7 @@ tbody tr:nth-child(odd) {
 }
 
 tbody tr:hover {
-  background: rgb(170, 171, 184);
+  background: rgb(168, 199, 181);
 }
 
 /*thead th:nth-child(9) {
