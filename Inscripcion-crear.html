@@ -79,7 +79,7 @@
                                 <div class="col-12 col-sm-6 mb-3">
                                     <label for="nombrecurso">Nombre del Curso<span class="req">*</span></label>
                                     <!--input type="text" id="nombrecurso" name="nombrecurso" required autocomplete="off" class="form-control"-->
-                                    <select name="nombrecurso" id="nombrecurso" class="form-select">
+                                    <select name="nombrecurso" id="nombrecurso" required class="form-select">
                                       <option value="">Seleccione...</option>
                                       <option value="Mecánica Básica">Mecánica Básica</option>
                                       <option value="Electricidad">Electricidad</option>
@@ -90,7 +90,7 @@
                                     <label for="nombreinstructor">Nombre del Instructor<span class="req">*</span></label>
                                     <!--input type="text" id="nombreinstructor" name="nombreinstructor" required autocomplete="off" 
                                       class="form-control"-->
-                                      <select name="nombreinstructor" id="nombreinstructor" class="form-select">
+                                      <select name="nombreinstructor" id="nombreinstructor" required class="form-select">
                                         <option value="">Seleccione...</option>
                                         <option value="Harold Medina">Harold Medina</option>
                                         <option value="No asignado">No asignado</option>
@@ -98,27 +98,31 @@
                                 </div>
                             </div>
                             
-                            <div class="mb-3">
-                                <label for="nombreestudiante">Nombre del Estudiante<span class="req">*</span></label>
-                                <input type="text" id="nombreestudiante" name="nombreestudiante" required autocomplete="off" 
-                                  class="form-control">
+                            <div class="row">
+                              <div class="col-12 col-sm-6 mb-3">
+                                  <label for="idestudiante">Identificación del Estudiante<span class="req">*</span></label>
+                                  <input type="text" id="idestudiante" name="idestudiante" required class="form-control">
+                              </div>
+                              <div class="col-12 col-sm-6 mb-3">
+                                  <label for="nomestudiante">Nombre</label>
+                                  <input type="text" id="nomestudiante" name="nomestudiante" class="form-control" disabled>
+                              </div>
                             </div>
                             
                             <div class="row">
                                 <div class="col-12 col-sm-4 mb-3">
                                     <label for="finicio">Fecha Inicio<span class="req">*</span></label>
-                                    <input type="date" id="finicio" name="finicio" value="2021-01-01" min="2000-01-01" max="2050-12-31" class="form-control">
+                                    <input type="date" id="finicio" name="finicio" value="2021-01-01" min="2000-01-01" max="2050-12-31" class="form-control" required>
                                 </div>
 
                                 <div class="col-12 col-sm-4 mb-3">
                                     <label for="ffin">Fecha Fin<span class="req">*</span></label>
-                                    <input type="date" id="ffin" name="ffin" value="2021-01-01" min="2000-01-01" max="2050-12-31" class="form-control">
+                                    <input type="date" id="ffin" name="ffin" value="2021-01-01" min="2000-01-01" max="2050-12-31" class="form-control" required>
                                 </div>
 
                                 <div class="col-12 col-sm-4 mb-3">
                                     <label for="estadocertif">Certificado<span class="req">*</span></label>
-                                    <!--select name="estadocertif" id="estadocertif" class="form-select"-->
-                                    <select class="form-select" name="estadocertif" id="estadocertif">
+                                    <select class="form-select" name="estadocertif" id="estadocertif" required>
                                         <option value="">Seleccione...</option>
                                         <option value="Nuevo">Entregado</option>
                                         <option value="Abierto">No Entregado</option>
