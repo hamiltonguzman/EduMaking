@@ -9,6 +9,7 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
     <link rel="icon" href="Imagen/Logo.png">
+    
     <title>EduMaking-CRM - Instructor</title>
 </head>
 <body>
@@ -26,9 +27,17 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link" href="Contactos Persona.html">Contacto</a>
-                  </li>
+                
+                  <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Contacto
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="Contactos Persona.html">Personas</a></li>
+                    <li><a class="dropdown-item" href="Contactos - Empresa.html">Empresas</a></li>
+                  </ul>
+                </li>
+                  
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page"href="Instructor.html">Instructor</a>
                   </li>
@@ -62,7 +71,7 @@
                             <div class="col-12 col-sm-6 mb-3">
                               <label for="estado">Estado<span class="req">*</span></label>
                               <!-- este es un campo de seleccion tal como lo he PAIS y CIUDAD  --ANDERSON-->  
-                              <select name="estado" id="estado" class="form-control">
+                              <select name="estado" id="estado" class="form-select">
                                 <option value="">Seleccione...</option>
                                 <option value="Activo">Activo</option>
                                 <option value="Inactivo">Inactivo</option>
@@ -89,7 +98,7 @@
 
                         <div class="mb-3">
                           <label for="profesion">Profesion<span class="req">*</span></label>
-                          <select name="profesion" id="profesion" class="form-control">
+                          <select name="profesion" id="profesion" class="form-select">
                             <option value="">Seleccione...</option>
                             <option value="IngenieroCivil">Ingeniero civil</option>
                             <option value="IngenieroPetroleos">Ingeniero de Petroleos</option>
@@ -105,7 +114,7 @@
                         <div class="row">
                           <div class="col-12 col-sm-6 mb-3">
                               <label for="pais">Pais<span class="req">*</span></label>
-                              <select name="pais" id="pais" class="form-control">
+                              <select name="pais" id="pais" class="form-select">
                                 <option value="">Seleccione...</option>
                                 <option value="Colombia">Cololmbia</option>
                                 <option value="España">España</option>
@@ -114,7 +123,7 @@
                           
                           <div class="col-12 col-sm-6 mb-3">
                               <label for="ciudad">ciudad<span class="req">*</span></label>
-                                <select name="ciudad" id="ciudad" class="form-control">
+                                <select name="ciudad" id="ciudad" class="form-select">
                                   <option value="">Seleccione...</option>
                                   <option value="Bucaramanga">Bucaramanga</option>
                                   <option value="Barrancabermeja">Barrancabermeja</option>
