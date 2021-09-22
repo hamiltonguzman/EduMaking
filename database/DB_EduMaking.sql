@@ -10,6 +10,30 @@ create table usuarios(
 	primary key(id_usuario)
 );
 
+create table pais (
+  id_pais char(3) NOT NULL DEFAULT '',
+  nom_pais char(52) NOT NULL DEFAULT '',
+  continente_pais varchar(50) NOT NULL DEFAULT 'Asia',
+  capital_pais int DEFAULT NULL,
+  codigo_pais char(2) NOT NULL DEFAULT '',
+  PRIMARY KEY (id_pais)
+);
+
+create table ciudad (
+  id_ciudad int not null,
+  nom_ciudad char(35) NOT NULL DEFAULT '',
+  id_pais char(3) NOT NULL DEFAULT '',
+  estado_ciudad char(20) not null DEFAULT '',
+  primary key (id_ciudad),
+  constraint ciudad_pais_fk foreign key (id_pais) references pais (id_pais)
+);
+
+create table profesiones(
+	id_profesion int not null,
+	nom_profesion varchar(70) not null,
+	primary key(id_profesion)
+);
+
 create table persona(
 	id_persona int not null,
 	nom_persona varchar(70) not null,
@@ -24,22 +48,30 @@ create table persona(
 	rut_persona int not null,
 	Interes varchar(1000) not null,
 	estado_persona varchar(8) not null,
-	primary key(id_persona)
+	primary key(id_persona),
+    constraint persona_pais_fk foreign key (id_pais) references pais (id_pais),
+    constraint persona_ciudad_fk foreign key (id_ciudad) references ciudad (id_ciudad),
+    constraint persona_profesiones_fk foreign key (id_profesion) references profesiones (id_profesion)
 );
 
 create table empresa(
 	nit_empresa int not null,
 	nom_Empresa varchar(70) not null,
-	contacto_empresa varchar(70) not null,
-	tel_empresa int,
+    tel_empresa int,
 	email_empresa varchar(70) not null,
+    rut_empresa varchar(256) not null,
+	contacto_empresa varchar(70) not null,
+    tel_contacto int,
+	email_contacto varchar(70) not null,
 	cargo_empresa varchar(40),
-	tipo_empresa varchar(10) not null,
+	clasificacion varchar(10) not null,
 	id_pais char(3) NOT NULL,
 	id_ciudad int not null,
-	rut_empresa int not null,
 	Interes varchar(1000) not null,
-    primary key(nit_empresa)
+    estado_empresa varchar(8) not null,
+    primary key(nit_empresa),
+    constraint empresa_pais_fk foreign key (id_pais) references pais (id_pais),
+    constraint empresa_ciudad_fk foreign key (id_ciudad) references ciudad (id_ciudad)
 );
 
 create table instructor(
@@ -52,7 +84,10 @@ create table instructor(
 	id_pais char(3) NOT NULL,
 	id_ciudad int not null,
 	estado_instructor varchar(8) not null,
-	primary key(id_instructor)
+    primary key(id_instructor),
+    constraint instructor_pais_fk foreign key (id_pais) references pais (id_pais),
+    constraint instructor_ciudad_fk foreign key (id_ciudad) references ciudad (id_ciudad),
+    constraint instructor_profesiones_fk foreign key (id_profesion) references profesiones (id_profesion)
 );
 
 create table cursos(
@@ -75,29 +110,6 @@ create table inscripcion(
     constraint inscripcion_persona_fk foreign key (id_persona) references persona (id_persona)
 );
 
-create table profesiones(
-	id_profesion int not null,
-	nom_profesion varchar(70) not null,
-	primary key(id_profesion)
-);
-
-create table pais (
-  id_pais char(3) NOT NULL DEFAULT '',
-  nom_pais char(52) NOT NULL DEFAULT '',
-  continente_pais varchar(50) NOT NULL DEFAULT 'Asia',
-  capital_pais int DEFAULT NULL,
-  codigo_pais char(2) NOT NULL DEFAULT '',
-  PRIMARY KEY (id_pais)
-);
-
-create table ciudad (
-  id_ciudad int not null,
-  nom_ciudad char(35) NOT NULL DEFAULT '',
-  id_pais char(3) NOT NULL DEFAULT '',
-  estado_ciudad char(20) not null DEFAULT '',
-  primary key (id_ciudad),
-  constraint ciudad_pais_fk foreign key (id_pais) references pais (id_pais)
-);
 
 /*Insertamos uno de los usuarios del sistema*/
 INSERT INTO usuarios VALUES (1,'Olga patricia Bravo carvajal','Activo','admin123','olga.bravo@o365.unab.edu.co');
