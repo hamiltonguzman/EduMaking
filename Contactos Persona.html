@@ -65,127 +65,151 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-12 col-sm-6 mb-3">
-                                    <label for="nombrepersona">Nombre<span class="req">*</span></label>
-                                    <input type="text"required autocomplete="on" placeholder="Ingrese el nombre"/>
+                                    <label for="cedula">Cedula<span class="req">*</span></label>
+                                    <input type="text" id="cedula" name="cedula" required class="form-control" autocomplete="on" placeholder="Ingrese la cedula">
                                 </div>
-                                
                                 <div class="col-12 col-sm-6 mb-3">
-                                    <label for="teléfono">Telefono<span class="req">*</span></label>
-                                    <input type="text"required autocomplete="on" placeholder="Ingrese el teléfono"/>
+                                    <label for="nombrepersona">Nombre<span class="req">*</span></label>
+                                    <input type="text" id="nombrepersona" name="nombrepersona" required class="form-control" placeholder="Ingrese el nombre">
                                 </div>
-                            
-                            <div class="col-12 col-sm-6 mb-3">
-                                <label for="correo">Correo<span class="req">*</span></label>
-                                <input type="text"required autocomplete="on" placeholder="Ingrese el correo"/>
                             </div>
 
-                            <div class="col-12 col-sm-6 mb-3">
-                              <label for="cargo">Cargo<span class="req">*</span></label>
-                              <input type="text"required autocomplete="on" placeholder="Ingrese el cargo"/>
-                            </div>
-                          
-                            <div class="col-12 col-sm-6 mb-3">
-                              <label for="profesion">Profesión<span class="req">*</span></label>
-                              <select name="profesion" id="profesion" class="form-control">
-                                <option value="">Seleccione...</option>  
-                                <option value="industrial">Ing. Industrial</option>
-                                <option value="mecanica">Ing. Mecánica</option>
-                                <option value="mecatro">Ing. Mecátronica</option>
-                                <option value="mgica">Ing. Metalúrgica</option>
-                                <option value="quimica">Ing. Química</option>
-                              </select>
-                             </div>
-
-                            <div class="col-12 col-sm-6 mb-3">
-                              <label for="empresa">Empresa<span class="req">*</span></label>
-                              <select name="empresa" id="empresa" class="form-control">
-                                <option value="">Seleccione...</option>  
-                                <option value="biosc">BioSC</option>
-                                <option value="ecopetrol">Ecopetrol</option>
-                                <option value="inemec">Inemec</option>
-                                <option value="promigas">Promigas</option>
-                                <option value="relianz">Realianz</option>
-                                        
-                              </select>
+                            <div class="row">
+                                <div class="col-12 col-sm-6 mb-3">
+                                    <label for="telefono">Telefono<span class="req">*</span></label>
+                                    <input type="text" id="telefono" name="telefono" class="form-control" required autocomplete="on" placeholder="Ingrese el teléfono"/>
+                                </div>
+                                <div class="col-12 col-sm-6 mb-3">
+                                    <label for="correo">Correo<span class="req">*</span></label>
+                                    <input type="email" id="correo" name="correo" class="form-control" required autocomplete="off" placeholder="Ingrese el correo"/>
+                                </div>
                             </div>
                             
-                            <div class="col-12 col-sm-4 mb-3">
-                              <label>Clasificación<span class="req">*</span></label>
-                                <select name="etapa" id="etapa" class="form-control">
-                                    <option value="clienteant">Cliente Antiguo</option>
-                                    <option value="clientenew">Cliente nuevo</option>
-                                    <option value="Lead">Prospecto</option>
-                                          
-                                </select>
-
+                            <div class="row">
+                                <div class="col-12 col-sm-6 mb-3">
+                                  <label for="cargo">Cargo</label>
+                                  <input type="text" id="cargo" name="cargo" class="form-control" autocomplete="on" placeholder="Ingrese el cargo"/>
+                                </div>
+                                <div class="col-12 col-sm-6 mb-3">
+                                  <label for="profesion">Profesión<span class="req">*</span></label>
+                                  <select name="profesion" id="profesion" class="form-select">
+                                    <option value="">Seleccione...</option>  
+                                    <option value="industrial">Ing. Industrial</option>
+                                    <option value="mecanica">Ing. Mecánica</option>
+                                    <option value="mecatro">Ing. Mecátronica</option>
+                                    <option value="mgica">Ing. Metalúrgica</option>
+                                    <option value="quimica">Ing. Química</option>
+                                  </select>
+                                </div>
                             </div>
 
-                            <div class="col-12 col-sm-4 mb-3">
-                              <label>Ciudad<span class="req">*</span></label>
-                              <select name="ciudad" id="ciudad" class="form-control">
-                                <option value="">Seleccione...</option>
-                                <option value="bermeja">Barrancabermeja</option>
-                                <option value="bogota">Bogota</option>
-                                <option value="Brasilia">Brasilia</option>
-                                <option value="bmanga">Bucaramanga</option>
-                                <option value="Cali">Cali</option>
-                                <option value="Medellin">Medellin</option>
-                                <option value="riodejaneiro">Rio de Janeiro</option>
-                                <option value="SantiagodeChile">Santiago de Chile</option>
-                                <option value="Saopaulo">Sao Paulo</option>
-                                <option value="Vina">Viña del mar</option>
-                              </select>
+                            <div class="row">
+                              <div class="col-12 col-sm-6 mb-3">
+                                  <label for="empresa">Empresa</label>
+                                  <select name="empresa" id="empresa" class="form-select">
+                                    <option value="">Seleccione...</option>  
+                                    <option value="biosc">BioSC</option>
+                                    <option value="ecopetrol">Ecopetrol</option>
+                                    <option value="inemec">Inemec</option>
+                                    <option value="promigas">Promigas</option>
+                                    <option value="relianz">Realianz</option>
+                                  </select>
+                              </div>
+                              <div class="col-12 col-sm-6 mb-3">
+                                <label for="tipoempresa">Tipo Empresa<span class="req">*</span></label>
+                                  <select name="tipoempresa" id="tipoempresa" class="form-select">
+                                      <option value="1">Personal</option>
+                                      <option value="2">Comercial</option>
+                                  </select>
+                              </div>
                             </div>
 
-                          <div class="col-12 col-sm-4 mb-3">
-                            <label for="pais">Pais<span class="req">*</span></label>
-                            <select name="pais" id="pais" class="form-control">
-                              <option value="">Seleccione...</option>
-                              <option value="brasil">Brasil</option>
-                              <option value="chile">Chile</option>
-                              <option value="colombia">Colombia</option>
-                            </select>
-                          </div>
+                            <div class="row">
+                                <div class="col-12 col-sm-6 mb-3">
+                                    <label for="pais">Pais<span class="req">*</span></label>
+                                    <select name="pais" id="pais" class="form-select">
+                                      <option value="">Seleccione...</option>
+                                      <option value="brasil">Brasil</option>
+                                      <option value="chile">Chile</option>
+                                      <option value="colombia">Colombia</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 col-sm-6 mb-3">
+                                    <label for="ciudad">Ciudad<span class="req">*</span></label>
+                                    <select name="ciudad" id="ciudad" class="form-select">
+                                      <option value="">Seleccione...</option>
+                                      <option value="bermeja">Barrancabermeja</option>
+                                      <option value="bogota">Bogota</option>
+                                      <option value="Brasilia">Brasilia</option>
+                                      <option value="bmanga">Bucaramanga</option>
+                                      <option value="Cali">Cali</option>
+                                      <option value="Medellin">Medellin</option>
+                                      <option value="riodejaneiro">Rio de Janeiro</option>
+                                      <option value="SantiagodeChile">Santiago de Chile</option>
+                                      <option value="Saopaulo">Sao Paulo</option>
+                                      <option value="Vina">Viña del mar</option>
+                                    </select>
+                                </div>
+                            </div>
 
-                          <div class="col-12 col-sm-6 mb-3">
-                            <label for="cedula">Cedula<span class="req">*</span></label>
-                            <input type="text"required autocomplete="on" placeholder="Ingrese la cedula"/>
-                          </div>
+                            <div class="row">
+                                <div class="col-12 col-sm-6 mb-3">
+                                  <label>Clasificación<span class="req">*</span></label>
+                                    <select name="etapa" id="etapa" class="form-select">
+                                        <option value="">Seleccione...</option>
+                                        <option value="clienteant">Cliente Antiguo</option>
+                                        <option value="clientenew">Cliente nuevo</option>
+                                        <option value="Lead">Prospecto</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 col-sm-6 mb-3">
+                                  <label for="rut">Rut<span class="req">*</span></label>
+                                  <input type="text" name="rut" id="rut" class="form-control" required autocomplete="on" placeholder="Ingrese el rut"/>
+                                </div>
+                            </div>
 
-                          <div class="col-12 col-sm-6 mb-3">
-                            <label for="rut">Rut<span class="req">*</span></label>
-                            <input type="text"required autocomplete="on" placeholder="Ingrese el rut"/>
-                          </div>
+                            <div class="row">
+                                <div class="col-12 col-sm-12 mb-3">
+                                    <label for="intereses" class="form-label">Intereses<span class="req">*</span></label>
+                                    <textarea class="form-control" id="intereses" name="intereses" rows="3" required></textarea>
+                                </div>
+                            </div>
 
-                          <div class="col-12 col-sm-4 mb-3">
-                            <label>Estado del contacto<span class="req">*</span></label>
-                              <select name="contacto" id="contacto" class="form-control">
-                                  <option value="clienteant">Activo</option>
-                                  <option value="clientenew">Inactivo</option>
-                                     
-                              </select>
-
-                          </div>
-                        </div>   <!--a href="#" class="btn btn-primary">Crear Inscripcion</a-->
-                            
+                            <div class="row">
+                              <div class="col-12 col-sm-3 mb-3">
+                                  <label>Estado del contacto<span class="req">*</span></label>
+                                  <select name="estado" id="estado" class="form-select">
+                                      <option value="A">Activo</option>
+                                      <option value="I">Inactivo</option>
+                                  </select>
+                              </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="card">
-                      <div class="card-body">
-                          <div class="row">
-                              <div class="boton col-sm-4">
-                                <button type="submit" class="btn btn-primary">Registrar</button>
-                              </div>
-                              <div class="boton col-sm-4">
-                                <button type="submit" class="btn btn-primary">Modificar</button>
-                              </div>
-                              <div class="boton col-sm-4">
-                                <button type="submit" class="btn btn-primary">Eliminar</button>
-                              </div>
-                          </div>
-                        </div> <!-- CARD-BODY cerramos clase CARD-BODY de los botones  --ANDERSON-->
-                      </div>  <!-- CARD cerramos clase CARD de los botones  --ANDERSON-->
+                    <!--div class="boton">
+                      <button type="button" class="btn btn-primary" width="10%">Registrar</button>
+                      <button type="button" class="btn btn-success">Modificar</button>
+                      <button type="button" class="btn btn-danger">Eliminar</button>
+                    </div-->
+
+                    <!--div class="card">
+                      <div class="card-body"-->
+                        <!--div class="row"-->
+                        <h1> </h1>
+                        <div class="btn-group" role="group">
+                              <!--div class="col-12 col-sm-4 mb-1"-->
+                                  <button type="submit" class="btn btn-primary">Registrar</button>
+                              <!--/div-->
+                              <!--div class="col-12 col-sm-4 mb-1"-->
+                                  <button type="button" class="btn btn-success">Modificar</button>
+                              <!--/div-->
+                              <!--div class="col-12 col-sm-4 mb-1"-->
+                                  <button type="button" class="btn btn-danger">Eliminar</button>
+                              <!--/div-->
+                        </div>
+                      <!--/div> <!-- CARD-BODY cerramos clase CARD-BODY de los botones  --ANDERSON-->
+                    <!--/div-->  <!-- CARD cerramos clase CARD de los botones  --ANDERSON-->
             
                 </form>
                 
