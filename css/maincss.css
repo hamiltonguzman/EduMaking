@@ -96,7 +96,7 @@ input:focus {
   box-shadow: none;
   transition: 0.25s;
   display: block;
-  width: 250px;
+  width: 230px;
   margin: 0 auto;
 }
 
@@ -135,7 +135,7 @@ input:focus {
 
 .boton {
   padding-top: 10px;
-  padding-left: 5px;
+  /*padding-left: 5px;*/
 }
 
 /* end of footer */
