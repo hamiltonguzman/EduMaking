@@ -24,7 +24,7 @@ Vue.component('menuPpal', {
                             <a class="nav-link" href="Curso.html">Cursos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="Inscripcion.html">Inscripción</a>
+                            <a class="nav-link" aria-current="page" href="Inscripcion.html">Inscripción</a>
                         </li>
                     </ul>
                 </div>
