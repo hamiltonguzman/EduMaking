@@ -84,7 +84,7 @@ create table cursos(
 
 create table inscripciones(
 	id_inscripcion int auto_increment,
-	id_curso varchar(10) not null,
+	id_curso int not null,
     id_persona int not null,
     fecha_ini date not null, 
     fecha_fin date not null,
