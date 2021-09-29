@@ -62,7 +62,7 @@ create table instructores(
 	tel_instructor int,
 	email_instructor varchar(70) not null,
 	id_profesion int not null,
-	experiencia varchar(1000) not null,
+	fecha_ini_experiencia date not null,
 	id_pais char(3) NOT NULL,
 	id_ciudad int not null,
 	estado_instructor varchar(8) not null,
@@ -96,7 +96,7 @@ create table inscripciones(
 
 
 /*Insertamos uno de los usuarios del sistema*/
-INSERT INTO usuarios VALUES (1,'Olga patricia Bravo carvajal','Activo','admin123','olga.bravo@o365.unab.edu.co');
+INSERT INTO usuarios VALUES (1,'Olga patricia Bravo carvajal','Activo','admin123','opbravo1@hotmail.com');
 /*Insertamos las profesiones, si hay necesidad debera ingresarse despues*/
 INSERT INTO profesiones VALUES (1,'Informática y ciencias de la computación');
 INSERT INTO profesiones VALUES (2,'Ingeniería ambiental y sanitario');
