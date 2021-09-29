@@ -29,7 +29,13 @@ Vue.component('menuPpal', {
                     </ul>
                 </div>
             </div>
-        </nav>`
+        </nav>`,
+    
+    data: function(){
+        return {
+            Active:  false
+        }
+    }
 });
 
 var app = new Vue({
