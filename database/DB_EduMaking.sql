@@ -73,7 +73,7 @@ create table instructores(
 );
 
 create table cursos(
-	id_curso varchar(10) not null,
+	id_curso int auto_increment,
     id_instructor int not null,
     nom_curso varchar(70) not null,
     contenido varchar(1000) not null,
