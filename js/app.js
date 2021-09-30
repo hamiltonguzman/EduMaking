@@ -1,4 +1,5 @@
 Vue.component('menuPpal', {
+    props: ['nameFile'],
     template: 
         `<nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
@@ -9,8 +10,8 @@ Vue.component('menuPpal', {
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Contacto
+                            <a v-bind:class="[nameFile === 'Contactos Persona.html' || nameFile === 'Contactos - Empresa.html' ? 'nav-link dropdown-toggle active' :  'nav-link dropdown-toggle']" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Contacto
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="Contactos Persona.html">Personas</a></li>
@@ -18,13 +19,13 @@ Vue.component('menuPpal', {
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Instructor.html">Instructor</a>
+                            <a v-bind:class="[nameFile === 'Instructor.html' ? 'nav-link active' :  'nav-link']" href="Instructor.html">Instructor</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Curso.html">Cursos</a>
+                            <a v-bind:class="[nameFile === 'Curso.html' ? 'nav-link active' :  'nav-link']" href="Curso.html">Cursos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="Inscripcion.html">Inscripción</a>
+                            <a v-bind:class="[nameFile === 'Inscripcion.html' ? 'nav-link active' :  'nav-link']" href="Inscripcion.html">Inscripción</a>
                         </li>
                     </ul>
                 </div>
