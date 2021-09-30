@@ -10,7 +10,7 @@
     <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
     <link rel="icon" href="Imagen/Logo.png">
     <title>EduMaking-CRM - Contacto Persona</title>
-</head>
+</head> 
 <body>
     <div class="cuerpoCompleto" display= "flex" justify-content= "center">
         <header>
@@ -85,24 +85,18 @@
                                   </select>
                               </div>
                               <div class="col-12 col-sm-6 mb-3">
-                                <label for="tipoempresa">Tipo Empresa<span class="req">*</span></label>
-                                  <select name="tipoempresa" id="tipoempresa" class="form-select">
-                                      <option value="1">Personal</option>
-                                      <option value="2">Comercial</option>
-                                  </select>
+                                <label for="pais">Pais<span class="req">*</span></label>
+                                <select name="pais" id="pais" class="form-select">
+                                  <option value="">Seleccione...</option>
+                                  <option value="brasil">Brasil</option>
+                                  <option value="chile">Chile</option>
+                                  <option value="colombia">Colombia</option>
+                                </select>
                               </div>
                             </div>
 
                             <div class="row">
-                                <div class="col-12 col-sm-6 mb-3">
-                                    <label for="pais">Pais<span class="req">*</span></label>
-                                    <select name="pais" id="pais" class="form-select">
-                                      <option value="">Seleccione...</option>
-                                      <option value="brasil">Brasil</option>
-                                      <option value="chile">Chile</option>
-                                      <option value="colombia">Colombia</option>
-                                    </select>
-                                </div>
+                                
                                 <div class="col-12 col-sm-6 mb-3">
                                     <label for="ciudad">Ciudad<span class="req">*</span></label>
                                     <select name="ciudad" id="ciudad" class="form-select">
@@ -119,9 +113,6 @@
                                       <option value="Vina">Viña del mar</option>
                                     </select>
                                 </div>
-                            </div>
-
-                            <div class="row">
                                 <div class="col-12 col-sm-6 mb-3">
                                   <label>Clasificación<span class="req">*</span></label>
                                     <select name="etapa" id="etapa" class="form-select">
@@ -131,6 +122,10 @@
                                         <option value="Lead">Prospecto</option>
                                     </select>
                                 </div>
+                            </div>
+
+                            <div class="row">
+                                
                                 <div class="col-12 col-sm-6 mb-3">
                                   <label for="rut">Rut<span class="req">*</span></label>
                                   <input type="text" name="rut" id="rut" class="form-control" required autocomplete="on" placeholder="Ingrese el rut"/>
