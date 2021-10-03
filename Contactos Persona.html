@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +19,7 @@
             </div>
         </header>
         <div id="menuPpal">
-          <menu-Ppal></menu-Ppal>
+            <menu-Ppal name-File = "Contactos Persona.html"></menu-Ppal>
         </div>
         <div class="contenido">
           <div class="form">
@@ -35,25 +35,54 @@
                             <div class="row">
                                 <div class="col-12 col-sm-6 mb-3">
                                     <label for="cedula">Cedula<span class="req">*</span></label>
-                                    <input type="text" id="cedula" name="cedula" required class="form-control" autocomplete="on" placeholder="Ingrese la cedula">
+                                    <input type="text" id="cedula" name="cedula" required class="form-control" autocomplete="on" placeholder="Ingrese documento">
                                 </div>
                                 <div class="col-12 col-sm-6 mb-3">
-                                    <label for="nombrepersona">Nombre<span class="req">*</span></label>
+                                  <label for="tipodoc">Tipo Documento</label>
+                                  <select name="tipodoc" id="tipodoc" class="form-select">
+                                    <option value="">Seleccione...</option>  
+                                    <option value="cc">CC</option>
+                                    <option value="ce">CE</option>
+                                    <option value="nit">NIT</option>
+                                    <option value="nitcc">NITCC</option>
+                                    <option value="regciv">REGCIV</option>
+                                    <option value="ti">TI</option>
+                                  </select>
+                              </div>
+                                <div class="col-12 col-sm-6 mb-3">
+                                    <label for="nombreempresa">Nombre Empresa<span class="req">*</span></label>
                                     <input type="text" id="nombrepersona" name="nombrepersona" required class="form-control" placeholder="Ingrese el nombre">
                                 </div>
+                                <div class="col-12 col-sm-6 mb-3">
+                                  <label for="teleemp">Telefono Empresa<span class="req">*</span></label>
+                                  <input type="text" id="teleemp" name="telefono" class="form-control" required autocomplete="on" placeholder="Ingrese el teléfono"/>
+                              </div>
                             </div>
 
                             <div class="row">
+                                
                                 <div class="col-12 col-sm-6 mb-3">
-                                    <label for="telefono">Telefono<span class="req">*</span></label>
-                                    <input type="text" id="telefono" name="telefono" class="form-control" required autocomplete="on" placeholder="Ingrese el teléfono"/>
-                                </div>
-                                <div class="col-12 col-sm-6 mb-3">
-                                    <label for="correo">Correo<span class="req">*</span></label>
+                                    <label for="correo">Correo Empresa<span class="req">*</span></label>
                                     <input type="email" id="correo" name="correo" class="form-control" required autocomplete="off" placeholder="Ingrese el correo"/>
                                 </div>
+                                <div class="col-12 col-sm-6 mb-3">
+                                  <label for="persona|">Nombre Persona<span class="req">*</span></label>
+                                  <input type="persona" id="correo" name="correo" class="form-control" required autocomplete="off" placeholder="Ingrese el nombre"/>
+                              </div>
                             </div>
-                            
+
+                            <div class="row">
+                              <div class="col-12 col-sm-6 mb-3">
+                                <label for="teleper">Telefono Persona<span class="req">*</span></label>
+                                <input type="text" id="teleper" name="teleper" class="form-control" required autocomplete="on" placeholder="Ingrese el teléfono"/>
+                              </div>
+                              <div class="col-12 col-sm-6 mb-3">
+                                <label for="correoper">Correo Persona<span class="req">*</span></label>
+                                <input type="email" id="correoper" name="correo" class="form-control" required autocomplete="off" placeholder="Ingrese el correo"/>
+                            </div>
+                            </div>
+
+                          
                             <div class="row">
                                 <div class="col-12 col-sm-6 mb-3">
                                   <label for="cargo">Cargo</label>
@@ -74,14 +103,12 @@
 
                             <div class="row">
                               <div class="col-12 col-sm-6 mb-3">
-                                  <label for="empresa">Empresa</label>
-                                  <select name="empresa" id="empresa" class="form-select">
-                                    <option value="">Seleccione...</option>  
-                                    <option value="biosc">BioSC</option>
-                                    <option value="ecopetrol">Ecopetrol</option>
-                                    <option value="inemec">Inemec</option>
-                                    <option value="promigas">Promigas</option>
-                                    <option value="relianz">Realianz</option>
+                                <label>Clasificación<span class="req">*</span></label>
+                                  <select name="etapa" id="etapa" class="form-select">
+                                      <option value="">Seleccione...</option>
+                                      <option value="clienteant">Cliente Antiguo</option>
+                                      <option value="clientenew">Cliente nuevo</option>
+                                      <option value="Lead">Prospecto</option>
                                   </select>
                               </div>
                               <div class="col-12 col-sm-6 mb-3">
@@ -114,24 +141,13 @@
                                     </select>
                                 </div>
                                 <div class="col-12 col-sm-6 mb-3">
-                                  <label>Clasificación<span class="req">*</span></label>
-                                    <select name="etapa" id="etapa" class="form-select">
-                                        <option value="">Seleccione...</option>
-                                        <option value="clienteant">Cliente Antiguo</option>
-                                        <option value="clientenew">Cliente nuevo</option>
-                                        <option value="Lead">Prospecto</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                
-                                <div class="col-12 col-sm-6 mb-3">
                                   <label for="rut">Rut<span class="req">*</span></label>
                                   <input type="text" name="rut" id="rut" class="form-control" required autocomplete="on" placeholder="Ingrese el rut"/>
                                 </div>
+                                
                             </div>
 
+                            
                             <div class="row">
                                 <div class="col-12 col-sm-12 mb-3">
                                     <label for="intereses" class="form-label">Intereses<span class="req">*</span></label>
