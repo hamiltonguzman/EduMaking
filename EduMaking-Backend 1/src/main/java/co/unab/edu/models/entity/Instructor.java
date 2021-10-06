@@ -41,7 +41,6 @@ public class Instructor {
 	
 	@Column(name = "estado_instructor")
 	private String estado;
-	
 
 	public Integer getId() {
 		return id;
@@ -54,7 +53,6 @@ public class Instructor {
 	public String getNombre() {
 		return nombre;
 	}
-
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
@@ -122,4 +120,7 @@ public class Instructor {
 				+ profesion + ", fInicioExp=" + fInicioExp + ", pais=" + pais + ", ciudad=" + ciudad + ", estado="
 				+ estado + "]";
 	}
+	
+
+	
 }

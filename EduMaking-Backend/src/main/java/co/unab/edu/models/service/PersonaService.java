@@ -7,9 +7,12 @@ import co.unab.edu.models.entity.Persona;
 
 public interface PersonaService {
 
-	public List<Persona>findAll();
-	public Optional<Persona>findById(Integer id);
-	public Persona save (Persona persona);
-	public void deleteById(Integer id);
+    public List<Persona>findAll();
+	
+    public Optional<Persona>findById(Integer id);
+	
+    public Persona save(Persona persona);
+	
+    public void deleteById(Integer id);
+		
 }
-

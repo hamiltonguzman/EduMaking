@@ -26,8 +26,6 @@ public class Usuario {
 	
 	@Column(name = "email_usuario")
 	private String email;
-	
-	
 
 	public Integer getId() {
 		return id;
@@ -74,4 +72,6 @@ public class Usuario {
 		return "Usuario [id=" + id + ", nombre=" + nombre + ", estado=" + estado + ", password=" + password + ", email="
 				+ email + "]";
 	}
+	
+
 }

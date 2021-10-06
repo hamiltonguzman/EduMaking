@@ -12,16 +12,15 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import co.unab.edu.models.entity.Persona;
 import co.unab.edu.models.service.PersonaService;
+
 
 @RestController
 @RequestMapping("/api/personas")
 public class PersonaController {
 
-	@Autowired
-	private PersonaService personaService;
+	@Autowired PersonaService personaService;
 	
 	@GetMapping("{id}")
 	public Optional<Persona> buscarPorId(@PathVariable Integer id) {
@@ -29,12 +28,12 @@ public class PersonaController {
 	}
 	
 	@GetMapping("/listar")
-	public List<Persona> listar() {
-		return  personaService.findAll();
+	public List<Persona> listar(){
+		return personaService.findAll();
 	}
 	
 	@PostMapping
-	public Persona guardar(@RequestBody Persona persona) {
+	public Persona guardar(@RequestBody  Persona persona) {
 		return personaService.save(persona);
 	}
 	
@@ -45,27 +44,28 @@ public class PersonaController {
 	
 	@PutMapping("/actualizar/{id}")
 	public Persona actualizar(@RequestBody Persona persona, @PathVariable Integer id) {
-		Persona PersonaBD = personaService.findById(id).get();
-		PersonaBD.setIdPersona(persona.getIdPersona());
-		PersonaBD.setTipoDoc(persona.getTipoDoc());
-		PersonaBD.setNombreEmpresa(persona.getNombreEmpresa());
-		PersonaBD.setTelEmpresa(persona.getTelEmpresa());
-		PersonaBD.setEmailEmpresa(persona.getEmailEmpresa());
-		PersonaBD.setNombrePersona(persona.getNombrePersona());
-		PersonaBD.setTelPersona(persona.getTelPersona());
-		PersonaBD.setEmailPersona(persona.getEmailPersona());
-		PersonaBD.setCargoPersona(persona.getCargoPersona());
-		PersonaBD.setProfesion(persona.getProfesion());
-		PersonaBD.setClasif(persona.getClasif());
-		PersonaBD.setPais(persona.getPais());
-		PersonaBD.setCiudad(persona.getCiudad());
-		PersonaBD.setRutPersona(persona.getRutPersona());
-		PersonaBD.setInteres(persona.getInteres());
-		PersonaBD.setEstado(persona.getEstado());
 		
-		personaService.save(PersonaBD);
+		Persona eEnBD= personaService.findById(id).get();
+		eEnBD.setIdPersona(persona.getIdPersona());
+		eEnBD.setTipoDoc(persona.getTipoDoc());
+		eEnBD.setNombreEmpresa(persona.getNombreEmpresa());
+		eEnBD.setTelEmpresa(persona.getTelEmpresa());
+		eEnBD.setEmailEmpresa(persona.getEmailEmpresa());
+		eEnBD.setNombrePersona(persona.getNombrePersona());
+		eEnBD.setTelPersona(persona.getTelPersona());
+		eEnBD.setEmailPersona(persona.getEmailPersona());
+		eEnBD.setCargoPersona(persona.getCargoPersona());
+		eEnBD.setProfesion(persona.getProfesion());
+		eEnBD.setClasif(persona.getClasif());
+		eEnBD.setPais(persona.getPais());
+		eEnBD.setCiudad(persona.getCiudad());
+		eEnBD.setRutPersona(persona.getRutPersona());
+		eEnBD.setInteres(persona.getInteres());
+		eEnBD.setEstado(persona.getEstado());
+						
+		personaService.save(eEnBD);
 		return persona;
+		
 	}
-	
 	
 }
