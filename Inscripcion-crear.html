@@ -1,117 +1,171 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/maincss.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
-    <link rel="icon" href="Imagen/Logo.png">
-    <title>EduMaking-CRM - Inscripción</title>
-</head>
-<body>
-    <div class="cuerpoCompleto" display= "flex" justify-content= "center">
-        <header>
-            <div class="cabeza">
-                <img src="Imagen/logoEslogan1.png" >
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/maincss.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <link rel="icon" href="Imagen/Logo.png">
+        <title>EduMaking-CRM - Inscripción</title>
+    </head>
+    <body>
+        <div class="cuerpoCompleto" display= "flex" justify-content= "center">
+            <header>
+                <div class="cabeza">
+                    <img src="Imagen/logoEslogan1.png" >
+                </div>
+            </header>
+            
+            <div id="menuPpal">
+                <menu-Ppal name-File = "Inscripcion.html"></menu-Ppal>
             </div>
-        </header>
-        
-        <div id="menuPpal">
-            <menu-Ppal name-File = "Inscripcion.html"></menu-Ppal>
-        </div>
 
-        <div class="contenido">
-          <div class="form">
-                
-            <div class="tab-content">
-                <br/>
-            
-                <form action="/contacto" method="post">
-
-                    <div class="card">
-                        <div class="boton">
-                          <!--button type="submit" class="btn btn-primary">Crear Inscripción</button-->
-                          <a class="btn btn-info" href="inscripcion.html" role="button">Volver al Listado</a>
-                        </div>
-                        <h3> </h3>
-                        <h5 class="card-header rounded-top d-flex justify-content-center">Inscripción</h5>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-12 col-sm-6 mb-3">
-                                    <label for="nombrecurso">Nombre del Curso<span class="req">*</span></label>
-                                    <select name="nombrecurso" id="nombrecurso" required class="form-select" autofocus>
-                                      <option value="">Seleccione...</option>
-                                      <option value="Mecánica Básica">Mecánica Básica</option>
-                                      <option value="Electricidad">Electricidad</option>
-                                    </select>
-                                </div>
-                                <div class="col-12 col-sm-6 mb-3">
-                                    <label for="nombreinstructor">Nombre del Instructor</label>
-                                    <input type="text" id="nombreinstructor" name="nombreinstructor" class="form-control" disabled>
-                                </div>
-                            </div>
-                            
-                            <div class="row">
-                              <div class="col-12 col-sm-6 mb-3">
-                                  <label for="idestudiante">Identificación del Estudiante<span class="req">*</span></label>
-                                  <input type="text" id="idestudiante" name="idestudiante" required class="form-control">
-                              </div>
-                              <div class="col-12 col-sm-6 mb-3">
-                                  <label for="nomestudiante">Nombre</label>
-                                  <input type="text" id="nomestudiante" name="nomestudiante" class="form-control" disabled>
-                              </div>
-                            </div>
-                            
-                            <div class="row">
-                                <div class="col-12 col-sm-4 mb-3">
-                                    <label for="finicio">Fecha Inicio<span class="req">*</span></label>
-                                    <input type="date" id="finicio" name="finicio" value="2021-01-01" min="2000-01-01" max="2050-12-31" class="form-control" required>
-                                </div>
-
-                                <div class="col-12 col-sm-4 mb-3">
-                                    <label for="ffin">Fecha Fin<span class="req">*</span></label>
-                                    <input type="date" id="ffin" name="ffin" value="2021-01-01" min="2000-01-01" max="2050-12-31" class="form-control" required>
-                                </div>
-
-                                <div class="col-12 col-sm-4 mb-3">
-                                    <label for="estadocertif">Certificado<span class="req">*</span></label>
-                                    <select class="form-select" name="estadocertif" id="estadocertif" required>
-                                        <option value="">Seleccione...</option>
-                                        <option value="Nuevo">Entregado</option>
-                                        <option value="Abierto">No Entregado</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <!--a href="#" class="btn btn-primary">Crear Inscripcion</a-->
-                        </div>
-                    </div>
-
-                    <!--hr class="mb-4"-->
-                    <div class="boton">
-                      <button type="submit" class="btn btn-primary">Registrar</button>
-                      <!--a class="btn btn-info" href="inscripcion.html" role="button">Volver al Listado</a-->
-                    </div>
+            <div class="contenido">
+                <div class="form">
                     
-                    <!--button type="submit" class="button button-block"/>Crear Inscripcion</button-->
-            
-                </form>
+                    <div class="tab-content">
+                        <br/>
+                        <form action="http://localhost:8080/api/inscripciones" method="POST" id="frmInscripciones">
+                            <div class="card">
+                                <div class="boton">
+                                    <!--button type="submit" class="btn btn-primary">Crear Inscripción</button-->
+                                    <a class="btn btn-info" href="inscripcion.html" role="button">Volver al Listado</a>
+                                </div>
+                                <h3> </h3>
+                                <h5 class="card-header rounded-top d-flex justify-content-center">Inscripción</h5>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12 col-sm-6 mb-3">
+                                            <label for="nombrecurso">Nombre del Curso<span class="req">*</span></label>
+                                            <select name="nombrecurso" id="nombrecurso" required class="form-select" tabindex="1" autofocus onchange="runScriptInstr(event)">
+                                                <option value="">Seleccione...</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12 col-sm-6 mb-3">
+                                            <label for="nombreinstructor">Nombre del Instructor</label>
+                                            <input type="text" id="nombreinstructor" name="nombreinstructor" class="form-control" disabled>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-12 col-sm-4 mb-3">
+                                            <label for="idestudiante">Ident. del Estudiante<span class="req">*</span></label>
+                                            <input type="text" id="idestudiante" name="idestudiante" required class="form-control"  onchange="runScriptEstud(event)" tabindex="3">
+                                        </div>
+                                        <div class="col-12 col-sm-8 mb-3">
+                                            <label for="nomestudiante">Nombre</label>
+                                            <input type="text" id="nomestudiante" name="nomestudiante" class="form-control" disabled>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-12 col-sm-4 mb-3">
+                                            <label for="finicio">Fecha Inicio<span class="req">*</span></label>
+                                            <input type="date" id="finicio" name="finicio" min="2000-01-01" max="2050-12-31" class="form-control" required>
+                                        </div>
+
+                                        <div class="col-12 col-sm-4 mb-3">
+                                            <label for="ffin">Fecha Fin<span class="req">*</span></label>
+                                            <input type="date" id="ffin" name="ffin" min="2000-01-01" max="2050-12-31" class="form-control" required>
+                                        </div>
+
+                                        <div class="col-12 col-sm-4 mb-3">
+                                            <label for="estadocertif">Certificado<span class="req">*</span></label>
+                                            <select class="form-select" name="estadocertif" id="estadocertif" required>
+                                                <option value="">Seleccione...</option>
+                                                <option value="ENTREGADO">Entregado</option>
+                                                <option value="NO ENTREGADO">No Entregado</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!--a href="#" class="btn btn-primary">Crear Inscripcion</a-->
+                                </div>
+                            </div>
+
+                            <div class="boton">
+                                <button type="submit" class="btn btn-primary">Registrar</button>
+                            </div>
+                        </form>
+                    </div><!-- tab-content -->
+                </div> <!-- /form -->
+            </div> <!--contenido-->
+            <footer>
+                <div id="footer_wrapper">
+                    <div id="footer">
+                        Copyright © 2021 <a href="#">EduMaking</a> - Design: <a href="#">Grupo 7</a>
+                    </div> <!-- end of footer -->
+                </div> 
+            </footer>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/crudInscr.js" type="module"></script>
+        <script>
+            /* Obtengo el nombre del instructor */
+            function runScriptInstr(e) {
+                let idCurso = document.getElementById('nombrecurso').value;
+                let idInstr = '';
                 
-            </div><!-- tab-content -->
-            
-          </div> <!-- /form -->
-        </div> <!--contenido-->
-        <footer>
-            <div id="footer_wrapper">
-                <div id="footer">
-                    Copyright © 2021 <a href="#">EduMaking</a> - Design: <a href="#">Grupo 7</a>
-                </div> <!-- end of footer -->
-           </div> 
-        </footer>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="js/app.js"></script>
-</body>
+                // Con el id del curso, busco el dato del id del intructor
+                const API_URL_CURSO = '//localhost:8080/api/cursos/' + idCurso;
+
+                fetch(`${API_URL_CURSO}`)
+                    .then(response => response.json())
+                    .then(data => document.getElementById('nombreinstructor').value = data.instructor.nombre)
+                    .catch(error => console.log(error))
+            }
+
+            /* Obtengo el nombre del Estudiante */
+            function runScriptEstud(e) {
+                let ObjEstud = document.getElementById('idestudiante');
+                let IdEstud = ObjEstud.value;
+                const URL_ID_ESTUD = '//localhost:8080/api/personas/' + IdEstud;
+
+                fetch(`${URL_ID_ESTUD}`)
+                    .then(response => response.json())
+                    .then(data => document.getElementById('nomestudiante').value = data.nombrePersona)
+                    .catch(error => console.log(error))
+            }
+
+    
+            /* Guardamos los datos del formulario */
+            const FORM = document.getElementById("frmInscripciones");
+            FORM.addEventListener("submit", function (event) {
+                event.preventDefault();
+                let transactionFormData = new FormData(FORM);
+
+                const obj = {
+                    "curso": {
+                        "id": transactionFormData.get("nombrecurso")
+                    },
+                    "persona": {
+                        "idPersona": transactionFormData.get("idestudiante")
+                    },
+                    "fechaIni": transactionFormData.get("finicio"),
+                    "fechaFin": transactionFormData.get("ffin"),
+                    "certificado": transactionFormData.get("estadocertif")
+                };
+
+                fetch("//localhost:8080/api/inscripciones", {
+                    method: "POST",
+                    body: JSON.stringify(obj),
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                })
+                .then((res) => res.json())
+                .then((response) => {
+                    swal("INFORMACIÓN", "La inscripción se grabó exitosamente.", "success");
+
+                    FORM.reset();
+                    nombrecurso.focus();
+                })
+                .catch((error) => console.error("Error:", error));
+            })
+        </script>
+    </body>
 </html>
