@@ -19,7 +19,7 @@
             </div>
         </header>
         <div id="menuPpal">
-            <menu-Ppal name-File = "Contactos Persona.html"></menu-Ppal>
+            <menu-Ppal name-File = "Contactos Persona - crear.html"></menu-Ppal>
         </div>
         <div class="contenido">
           <div class="form">
@@ -51,11 +51,11 @@
                               </div>
                                 <div class="col-12 col-sm-6 mb-3">
                                     <label for="nombreempresa">Nombre Empresa<span class="req">*</span></label>
-                                    <input type="text" id="nombrepersona" name="nombrepersona" required class="form-control" placeholder="Ingrese el nombre">
+                                    <input type="text" id="nombreempresa" name="nombreempresa" required class="form-control" placeholder="Ingrese el nombre">
                                 </div>
                                 <div class="col-12 col-sm-6 mb-3">
                                   <label for="teleemp">Telefono Empresa<span class="req">*</span></label>
-                                  <input type="text" id="teleemp" name="telefono" class="form-control" required autocomplete="on" placeholder="Ingrese el teléfono"/>
+                                  <input type="text" id="teleemp" name="teleemp" class="form-control" required autocomplete="on" placeholder="Ingrese el teléfono"/>
                               </div>
                             </div>
 
@@ -63,11 +63,11 @@
                                 
                                 <div class="col-12 col-sm-6 mb-3">
                                     <label for="correo">Correo Empresa<span class="req">*</span></label>
-                                    <input type="email" id="correo" name="correo" class="form-control" required autocomplete="off" placeholder="Ingrese el correo"/>
+                                    <input type="email" id="correoemp" name="correoemp" class="form-control" required autocomplete="off" placeholder="Ingrese el correo"/>
                                 </div>
                                 <div class="col-12 col-sm-6 mb-3">
                                   <label for="persona|">Nombre Persona<span class="req">*</span></label>
-                                  <input type="persona" id="correo" name="correo" class="form-control" required autocomplete="off" placeholder="Ingrese el nombre"/>
+                                  <input type="persona" id="nombrepersona" name="nombrepersona" class="form-control" required autocomplete="off" placeholder="Ingrese el nombre"/>
                               </div>
                             </div>
 
@@ -78,7 +78,7 @@
                               </div>
                               <div class="col-12 col-sm-6 mb-3">
                                 <label for="correoper">Correo Persona<span class="req">*</span></label>
-                                <input type="email" id="correoper" name="correo" class="form-control" required autocomplete="off" placeholder="Ingrese el correo"/>
+                                <input type="email" id="correoper" name="correoper" class="form-control" required autocomplete="off" placeholder="Ingrese el correo"/>
                             </div>
                             </div>
 
@@ -104,7 +104,7 @@
                             <div class="row">
                               <div class="col-12 col-sm-6 mb-3">
                                 <label>Clasificación<span class="req">*</span></label>
-                                  <select name="etapa" id="etapa" class="form-select">
+                                  <select name="clasificacion" id="clasificacion" class="form-select">
                                       <option value="">Seleccione...</option>
                                       <option value="clienteant">Cliente Antiguo</option>
                                       <option value="clientenew">Cliente nuevo</option>
@@ -199,5 +199,148 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="js/app.js"></script>
+
+    <script>
+      const API_URL_PERSONAS = '//localhost:8080/api/personas/'
+      const MODAL_PERSONA = new bootstrap.Modal(document.getElementById('modalPersona'))
+
+      window.onload=function (){
+          const CONTENEDOR = document.querySelector("tbody");
+          const FOOT = document.querySelector("tfoot");
+          let result = '';
+          let resumen = '';
+      
+          const mostrar = (personas) => {
+              resumen += `<tr>
+                              <td colspan="11"><strong>Total Personas: ${personas.length}</strong></td>
+                          </tr>`
+              personas.forEach(curso => {
+                  result += `<tr>
+                                  <td>${persona.id}</td>
+                                  <td>${persona.nombre}</td>
+                                  <td>${persona.empresa}</td>
+                                  <td>${persona.telefono}</td>
+                                  <td>${persona.correo}</td>
+                                  <td>${persona.telefono}</td>
+                                  <td class="text-success"><i class="bi bi-pencil-square"></i></td>
+                          </tr>`
+              })
+      
+              CONTENEDOR.innerHTML = result
+              FOOT.innerHTML = resumen
+          };
+      
+          fetch(`${API_URL_PERSONAS + 'listar'}`)
+              .then(response => response.json())
+              .then(data => mostrar(data))
+              .catch(error => console.log(error))
+
+          //////////////////////////////////////////////////
+          /* Obtener datos para llenar el select de instructores */
+          const OBJ_INSTR = document.getElementById('Instructor');
+          const API_URL_PERSONAS = '//localhost:8080/api/personas/'
+
+          fetch(`${API_URL_PERSONAS + 'listar'}`)
+              .then(response => response.json())
+              .then(data => fillInstructor(data))
+              .catch(error => console.log(error))
+
+          function fillInstructor(instrJson) {
+              for (let instr of instrJson) {
+                  let newOption = document.createElement("option");
+                  newOption.value = instr.id;
+                  newOption.text = instr.nombre;
+                  OBJ_INSTR.add(newOption);
+              }
+          }
+      }
+
+      /* Manejador de eventos */
+      const on = (element, event, selector, handler) => {
+          element.addEventListener(event, e => {
+              if(e.target.closest(selector)){
+                  handler(e)
+              }
+          })
+      }
+      
+      /* Procedimiento Editar */
+      on(document, 'click', '.bi-pencil-square', e => {
+          let fila = e.target.parentNode.parentNode
+          let idPersona = fila.children[0].innerHTML
+
+          document.getElementById('ModalLabel').innerHTML = 'Modificación de Curso (' + idPersona + ')'
+          document.getElementById('codigo').value = idPersona;
+          document.getElementById('tipodoc').value = fila.children[1].innerHTML;
+          document.getElementById('nombreempresa').value = fila.children[2].innerHTML;
+          document.getElementById('teleemp').value = fila.children[3].innerHTML;
+          document.getElementById('correoempr').value = fila.children[4].innerHTML;
+          document.getElementById('nombrepersona').value = fila.children[5].innerHTML;
+          document.getElementById('teleper').value = fila.children[6].innerHTML;
+          document.getElementById('correoper').value = fila.children[7].innerHTML;
+          document.getElementById('cargo').value = fila.children[8].innerHTML;
+          document.getElementById('profesion').value = fila.children[9].innerHTML;
+          document.getElementById('pais').value = fila.children[10].innerHTML;
+          document.getElementById('ciudad').value = fila.children[11].innerHTML;
+          document.getElementById('rut').value = fila.children[12].innerHTML;
+          document.getElementById('intereses').value = fila.children[13].innerHTML;
+          document.getElementById('estado"').value = fila.children[14].innerHTML,
+           //window.location.href = "inscripcion-crear.html";
+          MODAL_PERSONA.show()
+          
+      })
+
+
+      /* Actualizamos los datos de persona del formulario modal */
+      const FORM_MODAL = document.getElementById("frmModalPersona");
+      FORM_MODAL.addEventListener('submit', (e)=>{
+          e.preventDefault()
+          //const MODAL_CURSO = new bootstrap.Modal(document.getElementById('modalCurso'))
+         
+          let idCurso = document.getElementById('codigo').value;
+          let modalFormData = new FormData(FORM_MODAL);
+
+          const objUpd = {
+            "id": transactionFormData.get("codigo"),
+            "tipodoc": transactionFormData.get("tipodoc"),
+            "nombrempresa": transactionFormData.get("nombrempresa"),
+            "teleemp": transactionFormData.get("teleemp"),
+            "correoemp": transactionFormData.get("correoemp"),
+            "nombrepersona": transactionFormData.get("nombrepersona"),
+            "teleper": transactionFormData.get("teleper"),
+            "correoper": transactionFormData.get("correoper"),
+            "cargo": transactionFormData.get("cargo"),
+            "profesion": transactionFormData.get("profesion"),
+            "pais": transactionFormData.get("pais"),
+            "ciudad": transactionFormData.get("ciudad"),
+            "rut": transactionFormData.get("rut"),
+            "intereses": transactionFormData.get("intereses"),
+            "estado": transactionFormData.get("estado"),
+          };
+
+          fetch(`${API_URL_PERSONAS + 'actualizar/' + idPersona}`, {
+              method: 'PUT',
+              body: JSON.stringify(objUpd),
+              headers: {
+                  'Content-Type':'application/json'
+              },
+          })
+          .then((res) => {
+              res.json();
+              swal({
+                  title: "INFORMACIÓN",
+                  text: "La persona se actualizó exitosamente.",
+                  type: "success"
+              }).then(function() {
+                  MODAL_PERSONA.hide();
+                  location.reload();
+              });
+              
+          })
+          .catch((error) => console.error("Error:", error));
+      })
+
+  </script>
+
 </body>
 </html>
