@@ -1,99 +1,247 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/maincss.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
-    <link rel="icon" href="Imagen/Logo.png">
-    <title>EduMaking-CRM - Cursos</title>
-</head>
-<body>
-    <div class="cuerpoCompleto" display= "flex" justify-content= "center">
-        <header>
-            <div class="cabeza">
-                <img src="Imagen/logoEslogan1.png" >
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/maincss.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <link rel="icon" href="Imagen/Logo.png">
+        <title>EduMaking-CRM - Cursos</title>
+    </head>
+    <body>
+        <div class="cuerpoCompleto" display= "flex" justify-content= "center">
+            <header>
+                <div class="cabeza">
+                    <img src="Imagen/logoEslogan1.png" >
+                </div>
+            </header>
+            <div id="menuPpal">
+                <menu-Ppal name-File = "curso.html"></menu-Ppal>
             </div>
-        </header>
-        <div id="menuPpal">
-            <menu-Ppal name-File = "Curso.html"></menu-Ppal>
-          <menu-Ppal></menu-Ppal>
+            <div class="contenido" id="contenido-Curso">
+                <div class="form">
+                        
+                    <div class="tab-content">
+                        <div class="col-md">
+                            <br/>
+                        </div>
+                        <div class="card" id="card-tblCurso">
+                            <div class="boton">
+                                <!--button type="submit" class="btn btn-primary">Crear Inscripción</button-->
+                                <a class="btn btn-info" href="curso-crear.html" role="button">Crear Curso</a>
+                            </div>
+                            <h3> </h3>
+                            <h5 class="card-header rounded-top d-flex justify-content-center">Listado de Cursos</h5>
+                            <div class="card-body">
+                                <table class="table table-primary table-striped table-hover" name="tblCursos">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" id="col1_curso">Id. Curso</th>
+                                            <th scope="col" id="col2_curso">Nombre del Curso</th>
+                                            <th scope="col" id="col3_curso">Id. Instructor</th>
+                                            <th scope="col" id="col4_curso">Instructor</th>
+                                            <th scope="col" id="col5_curso">Contenido</th>
+                                            <th scope="col" id="col6_curso">Duración (meses)</th>
+                                            <th scope="col" id="col7_curso">Editar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                    <tfoot class="table-primary">
+                                    </tfoot>
+                                </table>
+                            </div> <!-- /card-body-->
+                        </div> <!-- /card-->
+                    </div><!-- tab-content -->
+                </div> <!-- /form -->
+            </div> <!-- /contenido -->
+            <footer>
+                <div id="footer_wrapper">
+                    <div id="footer">
+                        Copyright © 2021 <a href="#">EduMaking</a> - Design: <a href="#">Grupo 7</a>
+                    </div> <!-- end of footer -->
+                </div> 
+            </footer>
+            <!-------------------------------------------------------------------------------------------->
+            <div id="modalCurso" class="modal fade" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header bg-primary text-white">
+                            <h5 class="modal-title" id="ModalLabel">Modificación de Curso</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="http://localhost:8080/api/cursos" method="POST"  id="frmModalCurso">
+                                <div class="row">
+                                    <div class="col-12 col-sm-6 mb-3">
+                                        <label for="codigo">Código del Curso<span class="req">*</span></label>
+                                        <input type="text" id="codigo" name="codigo" required autocomplete="off" class="form-control" autofocus tabindex="1" disabled>
+                                    </div>
+    
+                                    <div class="col-12 col-sm-6 mb-3">
+                                        <label for="nombrecurso">Nombre del Curso<span class="req">*</span></label>
+                                        <input type="text" id="nombrecurso" name="nombrecurso" required autocomplete="off" class="form-control" tabindex="2">
+                                    </div>
+    
+                                    <div class="col-12 col-sm-6 mb-3">
+                                        <label for="Instructor">Instructor</label>
+                                        <select name="Instructor" id="Instructor" name="Instructor" required class="form-select" tabindex="3">
+                                            <option value="">Seleccione...</option>
+                                        </select>
+                                    </div>
+    
+                                    <div class="col-12 col-sm-6 mb-3">
+                                        <label for="duracion">Duración del Curso (horas)</label> 
+                                        <input type="text" id="duracion" name="duracion" required autocomplete="off" class="form-control" tabindex="4">
+                                    </div>
+    
+                                    <div class="col-12 col-sm-12 mb-3">
+                                        <label for="contenido">Contenido del Curso</label>
+                                        <textarea class="form-control" id="contenido" name="contenido" rows="3" required tabindex="5"></textarea>
+                                    </div>
+                                    <input type="hidden" id="idCurso">
+                                </div> <!-- row-->
+                            
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">Actualizar</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="contenido">
-          <div class="form">
-                
-            <div class="tab-content">
-                <br/>
+        <!--------------------------------------------------------------------------------------------->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="js/app.js"></script>
+        <!--script src = "js/crudInscr.js" type = "module"></script-->
+        
+        <script>
+            const API_URL_CURSOS = '//localhost:8080/api/cursos/'
+            const MODAL_CURSO = new bootstrap.Modal(document.getElementById('modalCurso'))
+
+            window.onload=function (){
+                const CONTENEDOR = document.querySelector("tbody");
+                const FOOT = document.querySelector("tfoot");
+                let result = '';
+                let resumen = '';
             
-                <form action="/contacto" method="post">
-                  
-                  <div class="card">
-                    <h5 class="card-header rounded-top d-flex justify-content-center">Curso</h5>
-                    <div class="card-body">
-                      
-                      <div class="row">
+                const mostrar = (cursos) => {
+                    resumen += `<tr>
+                                    <td colspan="11"><strong>Total Cursos: ${cursos.length}</strong></td>
+                                </tr>`
+                    cursos.forEach(curso => {
+                        result += `<tr>
+                                        <td>${curso.id}</td>
+                                        <td>${curso.nombre}</td>
+                                        <td>${curso.instructor.id}</td>
+                                        <td>${curso.instructor.nombre}</td>
+                                        <td>${curso.contenido}</td>
+                                        <td>${curso.duracion}</td>
+                                        <td class="text-success"><i class="bi bi-pencil-square"></i></td>
+                                </tr>`
+                    })
+            
+                    CONTENEDOR.innerHTML = result
+                    FOOT.innerHTML = resumen
+                };
+            
+                fetch(`${API_URL_CURSOS + 'listar'}`)
+                    .then(response => response.json())
+                    .then(data => mostrar(data))
+                    .catch(error => console.log(error))
 
-                        <div class="col-12 col-sm-6 mb-3">
-                            <label for="codigo">Código del Curso<span class="req">*</span></label>
-                            <input type="text" id="codigo" name="codigo" required autocomplete="off" class="form-control">
-                        </div>
+                //////////////////////////////////////////////////
+                /* Obtener datos para llenar el select de instructores */
+                const OBJ_INSTR = document.getElementById('Instructor');
+                const API_URL_INSTRUCTORES = '//localhost:8080/api/instructores/'
 
-                        <div class="col-12 col-sm-6 mb-3">
-                            <label for="nombrecurso">Nombre del Curso<span class="req">*</span></label>
-                            <input type="text" id="nombrecurso" name="Nombre del Curso" required autocomplete="off" class="form-control">
-                        </div>
+                fetch(`${API_URL_INSTRUCTORES + 'listar'}`)
+                    .then(response => response.json())
+                    .then(data => fillInstructor(data))
+                    .catch(error => console.log(error))
 
-                        <div class="col-12 col-sm-6 mb-3">
-                            <label for="duracion">Duración del Curso (horas)</label> 
-                            <input type="text" id="duracion" name="Duración del Curso (horas)" required autocomplete="off" class="form-control">
-                        </div>
+                function fillInstructor(instrJson) {
+                    for (let instr of instrJson) {
+                        let newOption = document.createElement("option");
+                        newOption.value = instr.id;
+                        newOption.text = instr.nombre;
+                        OBJ_INSTR.add(newOption);
+                    }
+                }
+            }
 
-                        <div class="col-12 col-sm-6 mb-3">
-                            <label for="contenido">Contenido del Curso</label>
-                            <input type="text" id="contenido" name="Contenido del Curso" required autocomplete="off" class="form-control">
-                        </div>
-                          
-                          <div class="col-12 col-sm-6 mb-3">
-                            <label for="Instructor">Id del Instructor</label>
-                            <input type="text" id="Instructor" name="Id Instructor" required autocomplete="off" class="form-control">
-                          </div>
-                          
-                      </div> <!-- row-->
-                    </div> <!-- card-body-->
-                  </div> <!-- card-->
-                 
-                  <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="boton col-sm-4">
-                                <button type="submit" class="btn btn-primary">Registrar</button>
-                            </div>
-                            <div class="boton col-sm-4">
-                                <button type="submit" class="btn btn-success">Modificar</button>
-                            </div>
-                            <div class="boton col-sm-4">
-                                <button type="submit" class="btn btn-secondary">Consultar</button>
-                            </div>
-                        </div> <!-- row-->
-                      </div> <!-- CARD-BODY cerramos clase CARD-BODY de los botones  --ANDERSON-->
-                    </div> <!-- card-->
-                               
-                </form>
-              </div><!-- tab-content -->    
-            </div> <!-- /form -->
-          </div> <!--contenido-->
-          <footer>
-              <div id="footer_wrapper">
-                  <div id="footer">
-                      Copyright © 2021 <a href="#">EduMaking</a> - Design: <a href="#">Grupo 7</a>
-                  </div> <!-- end of footer -->
-            </div> 
-          </footer>
-    </div> <!--cuerpoCompleto-->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="js/app.js"></script>
-</body>
+            /* Manejador de eventos */
+            const on = (element, event, selector, handler) => {
+                element.addEventListener(event, e => {
+                    if(e.target.closest(selector)){
+                        handler(e)
+                    }
+                })
+            }
+            
+            /* Procedimiento Editar */
+            on(document, 'click', '.bi-pencil-square', e => {
+                let fila = e.target.parentNode.parentNode
+                let idCurso = fila.children[0].innerHTML
+
+                document.getElementById('ModalLabel').innerHTML = 'Modificación de Curso (' + idCurso + ')'
+                document.getElementById('codigo').value = idCurso;
+                document.getElementById('nombrecurso').value = fila.children[1].innerHTML;
+                document.getElementById('Instructor').value = fila.children[2].innerHTML;
+                document.getElementById('duracion').value = fila.children[5].innerHTML;
+                document.getElementById('contenido').value = fila.children[4].innerHTML;
+
+                //window.location.href = "inscripcion-crear.html";
+                MODAL_CURSO.show()
+                
+            })
+
+
+            /* Actualizamos los datos de curso del formulario modal */
+            const FORM_MODAL = document.getElementById("frmModalCurso");
+            FORM_MODAL.addEventListener('submit', (e)=>{
+                e.preventDefault()
+                //const MODAL_CURSO = new bootstrap.Modal(document.getElementById('modalCurso'))
+               
+                let idCurso = document.getElementById('codigo').value;
+                let modalFormData = new FormData(FORM_MODAL);
+
+                const objUpd = {
+                    "instructor": {"id": modalFormData.get("Instructor")},
+                    "nombre": modalFormData.get("nombrecurso"),
+                    "contenido": modalFormData.get("contenido"),
+                    "duracion": modalFormData.get("duracion")
+                };
+
+                fetch(`${API_URL_CURSOS + 'actualizar/' + idCurso}`, {
+                    method: 'PUT',
+                    body: JSON.stringify(objUpd),
+                    headers: {
+                        'Content-Type':'application/json'
+                    },
+                })
+                .then((res) => {
+                    res.json();
+                    swal({
+                        title: "INFORMACIÓN",
+                        text: "El curso se actualizó exitosamente.",
+                        type: "success"
+                    }).then(function() {
+                        MODAL_CURSO.hide();
+                        location.reload();
+                    });
+                    
+                })
+                .catch((error) => console.error("Error:", error));
+            })
+
+        </script>
+    </body>
 </html>

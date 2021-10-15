@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/maincss.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="icon" href="Imagen/Logo.png">
+    <title>EduMaking-CRM - Cursos</title>
+</head>
+<body>
+    <div class="cuerpoCompleto" display= "flex" justify-content= "center">
+        <header>
+            <div class="cabeza">
+                <img src="Imagen/logoEslogan1.png" >
+            </div>
+        </header>
+        <div id="menuPpal">
+            <menu-Ppal name-File = "Curso.html"></menu-Ppal>
+        </div>
+        <div class="contenido">
+          <div class="form">
+                
+            <div class="tab-content">
+                <br/>
+            
+                <form action="http://localhost:8080/api/cursos" method="POST" id="frmCursos">
+                  
+                    <div class="card">
+                        <h5 class="card-header rounded-top d-flex justify-content-center">Curso</h5>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 col-sm-6 mb-3">
+                                    <label for="codigo">Código del Curso<span class="req">*</span></label>
+                                    <input type="text" id="codigo" name="codigo" required autocomplete="off" class="form-control" autofocus tabindex="1" onchange="validaCurso(event)">
+                                </div>
+
+                                <div class="col-12 col-sm-6 mb-3">
+                                    <label for="nombrecurso">Nombre del Curso<span class="req">*</span></label>
+                                    <input type="text" id="nombrecurso" name="nombrecurso" required autocomplete="off" class="form-control" tabindex="2">
+                                </div>
+
+                                <div class="col-12 col-sm-6 mb-3">
+                                    <label for="Instructor">Instructor</label>
+                                    <select name="Instructor" id="Instructor" name="Instructor" required class="form-select" tabindex="3">
+                                        <option value="">Seleccione...</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-12 col-sm-6 mb-3">
+                                    <label for="duracion">Duración del Curso (horas)</label> 
+                                    <input type="text" id="duracion" name="duracion" required autocomplete="off" class="form-control" tabindex="4">
+                                </div>
+
+                                <div class="col-12 col-sm-12 mb-3">
+                                    <label for="contenido">Contenido del Curso</label>
+                                    <textarea class="form-control" id="contenido" name="contenido" rows="3" required tabindex="5"></textarea>
+                                </div>
+                            </div> <!-- row-->
+                        </div> <!-- card-body-->
+                    </div> <!-- card-->
+                
+                    <div class="row">
+                        <div class="boton col-12 col-sm-8">
+                            <button type="submit" class="btn btn-primary">Registrar</button>
+                        </div>
+                        <div class="boton col-12 col-sm-4">
+                            <!--button class="btn btn-info" href="curso.html" >Volver al Listado</button-->
+                            <a class="btn btn-info" href="curso.html" role="button">Volver al Listado</a>
+                        </div>
+                    </div> <!-- row-->
+                </form>
+              </div><!-- tab-content -->    
+            </div> <!-- /form -->
+          </div> <!--contenido-->
+          <footer>
+              <div id="footer_wrapper">
+                  <div id="footer">
+                      Copyright © 2021 <a href="#">EduMaking</a> - Design: <a href="#">Grupo 7</a>
+                  </div> <!-- end of footer -->
+            </div> 
+          </footer>
+    </div> <!--cuerpoCompleto-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        /* Obtener datos para llenar el select de instructores */
+        const OBJ_INSTR = document.getElementById('Instructor');
+        const API_URL_INSTRUCTORES = '//localhost:8080/api/instructores'
+
+        fetch(`${API_URL_INSTRUCTORES + '/listar'}`)
+            .then(response => response.json())
+            .then(data => fillInstructor(data))
+            .catch(error => console.log(error))
+
+        function fillInstructor(instrJson) {
+            for (let instr of instrJson) {
+                let newOption = document.createElement("option");
+                newOption.value = instr.id;
+                newOption.text = instr.nombre;
+                OBJ_INSTR.add(newOption);
+            }
+        }
+
+
+        /* Guardamos los datos del formulario */
+        const API_URL_CURSOS = '//localhost:8080/api/cursos/'
+        const FORM_CURSOS = document.getElementById("frmCursos");
+          
+        FORM_CURSOS.addEventListener("submit", function (event) {
+            event.preventDefault();
+            let transactionFormData = new FormData(FORM_CURSOS);
+
+            const obj = {
+                "id": transactionFormData.get("codigo"),
+                "instructor": {"id": transactionFormData.get("Instructor")},
+                "nombre": transactionFormData.get("nombrecurso"),
+                "contenido": transactionFormData.get("contenido"),
+                "duracion": transactionFormData.get("duracion")
+            };
+
+            fetch(`${API_URL_CURSOS}`, {
+                method: "POST",
+                body: JSON.stringify(obj),
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            })
+            .then((res) => {
+                res.json();
+                swal({
+                    title: "INFORMACIÓN",
+                    text: "El curso se grabó exitosamente.",
+                    type: "success"
+                }).then(function() {
+                    FORM_CURSOS.reset();
+                    codigo.focus();
+                });
+                
+            })
+            .catch((error) => console.error("Error:", error));
+        })
+
+
+        /* Valido si el código de curso ya existe */
+        function validaCurso(e) {
+            let codCurso = document.getElementById('codigo').value;
+
+            fetch(`${API_URL_CURSOS + codCurso}`)
+                .then(response => response.json())
+                .then(data => fillFields(data))
+                .catch(error => console.log(error))
+
+            function fillFields(cursosJson) {
+                if (cursosJson) {
+                    swal({
+                        title: "ADVERTENCIA",
+                        text: "¡Este código ya existe!",
+                        icon: "warning",
+                        type: "danger"
+                    }).then(function() {
+                        FORM_CURSOS.reset();
+                        codigo.focus();
+                    });
+                }
+            }
+
+        }
+
+    </script>
+</body>
+</html>

@@ -2,8 +2,9 @@
 const API_URL = '//localhost:8080/api/inscripciones/listar';
 
 /* Obtener datos para llenar la tabla de inscripciones */
-const CONTENEDOR = document.querySelector("tbody");
-if (CONTENEDOR) {
+const tblInscripciones = document.getElementsByName("tblInscripciones");
+if (tblInscripciones) {
+    const CONTENEDOR = document.querySelector("tbody");
     const FOOT = document.querySelector("tfoot");
     let result = '';
     let resumen = '';
@@ -71,57 +72,57 @@ const on = (element, event, selector, handler) => {
     })
 }
 
+if (tblInscripciones) {
+    /* Procedimiento Editar */
+    on(document, 'click', '.bi-pencil-square', e => {
+        const MODAL_INSCR = new bootstrap.Modal(document.getElementById('modalInscripcion'))
+        
+        let fila = e.target.parentNode.parentNode
+        let idInscr = fila.children[0].innerHTML
 
-/* Procedimiento Editar */
-on(document, 'click', '.bi-pencil-square', e => {
-    const MODAL_INSCR = new bootstrap.Modal(document.getElementById('modalInscripcion'))
-    
-    let fila = e.target.parentNode.parentNode
-    let idInscr = fila.children[0].innerHTML
+        document.getElementById('ModalLabel').innerHTML = 'Modificación de Inscripción (Id. # ' + idInscr + ')'
+        document.getElementById('idInscr').value = idInscr;
+        document.getElementById('nombrecurso').value = fila.children[1].innerHTML;
+        document.getElementById('nombreinstructor').value = fila.children[3].innerHTML;
+        document.getElementById('idestudiante').value = fila.children[4].innerHTML;
+        document.getElementById('nomestudiante').value = fila.children[5].innerHTML;
+        document.getElementById('finicio').value = fila.children[6].innerHTML;
+        document.getElementById('ffin').value = fila.children[7].innerHTML;
+        document.getElementById('estadocertif').value = fila.children[8].innerHTML;
 
-    document.getElementById('ModalLabel').innerHTML = 'Modificación de Inscripción (Id. # ' + idInscr + ')'
-    document.getElementById('idInscr').value = idInscr;
-    document.getElementById('nombrecurso').value = fila.children[1].innerHTML;
-    document.getElementById('nombreinstructor').value = fila.children[3].innerHTML;
-    document.getElementById('idestudiante').value = fila.children[4].innerHTML;
-    document.getElementById('nomestudiante').value = fila.children[5].innerHTML;
-    document.getElementById('finicio').value = fila.children[6].innerHTML;
-    document.getElementById('ffin').value = fila.children[7].innerHTML;
-    document.getElementById('estadocertif').value = fila.children[8].innerHTML;
-
-    //window.location.href = "inscripcion-crear.html";
-    MODAL_INSCR.show()
-     
-})
-
-/* Procedimiento Borrar */
-on(document, 'click', '.bi-trash', e => {
-    let fila = e.target.parentNode.parentNode
-    let idInscr = fila.firstElementChild.innerHTML
-    const API_URL_DEL = '//localhost:8080/api/inscripciones/' + idInscr;
-
-    swal({
-        title: "¿Está ud. seguro?",
-        text: "Una vez eliminado, no se podrá recuperar este registro.",
-        icon: "warning",
-        buttons: true,
-        buttons: ["Cancelar", "Eliminar"],
-        dangerMode: true,
+        //window.location.href = "inscripcion-crear.html";
+        MODAL_INSCR.show()
+        
     })
-    .then((willDelete) => {
-        if (willDelete) {
-            fetch(`${API_URL_DEL}`, {
-                method: 'DELETE'
-            })
-            .then(res => res.json())
-            .then( response => {
-                swal("¡El registro ha sido eliminado!", {icon: "success",});
-                //location.reload();
-            })
-            location.reload();
-        } else {
-            swal("La eliminación ha sido cancelada.");
-        }
-    })
-})
 
+    /* Procedimiento Borrar */
+    on(document, 'click', '.bi-trash', e => {
+        let fila = e.target.parentNode.parentNode
+        let idInscr = fila.firstElementChild.innerHTML
+        const API_URL_DEL = '//localhost:8080/api/inscripciones/' + idInscr;
+
+        swal({
+            title: "¿Está ud. seguro?",
+            text: "Una vez eliminado, no se podrá recuperar este registro.",
+            icon: "warning",
+            buttons: true,
+            buttons: ["Cancelar", "Eliminar"],
+            dangerMode: true,
+        })
+        .then((willDelete) => {
+            if (willDelete) {
+                fetch(`${API_URL_DEL}`, {
+                    method: 'DELETE'
+                })
+                .then(res => res.json())
+                .then( response => {
+                    swal("¡El registro ha sido eliminado!", {icon: "success",});
+                    //location.reload();
+                })
+                location.reload();
+            } else {
+                swal("La eliminación ha sido cancelada.");
+            }
+        })
+    })
+}

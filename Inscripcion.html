@@ -202,13 +202,19 @@
                     },
                     body: JSON.stringify(objUpd)
                 })
-                .then( response => {
-                    swal("INFORMACIÓN", "La inscripción se actualizó exitosamente.", "success");
-                    //location.reload();
+                .then((res) => {
+                    res.json();
+                    swal({
+                        title: "INFORMACIÓN",
+                        text: "La inscripción se actualizó exitosamente.",
+                        type: "success"
+                    }).then(function() {
+                        MODAL_INSCR.hide();
+                        location.reload();
+                    });
+                    
                 })
-                //.then( response => location.reload())
-                //MODAL_INSCR.hide()
-                location.reload();
+                .catch((error) => console.error("Error:", error));
             })
 
         </script>
