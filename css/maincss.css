@@ -242,6 +242,55 @@ input:focus {
   width: 5%;
 }
 
+/* tabla instructores */
+#col1_instr {
+  width: 5%;
+}
+
+#col2_instr {
+  width: 15%;
+}
+
+#col3_instr {
+  width: 5%;
+}
+
+#col4_instr {
+  width: 5%;
+}
+
+#col5_instr {
+  width: 2%;
+}
+
+#col6_instr {
+  width: 20%;
+}
+
+#col7_instr {
+  width: 5%;
+}
+
+#col8_instr {
+  width: 5%;
+}
+
+#col9_instr {
+  width: 5%;
+}
+
+#col10_instr {
+  width: 5%;
+}
+
+#col11_instr {
+  width: 5%;
+}
+
+#col12_instr {
+  width: 2%;
+}
+
 /*#modal fade {
   width: 100%;
 }*/

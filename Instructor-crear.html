@@ -72,7 +72,7 @@
                                     <div class="row">
                                         <div class="col-12 col-sm-4 mb-3">
                                             <label for="pais">País<span class="req">*</span></label>
-                                            <select class="form-select" name="pais" id="pais" required tabindex="7">
+                                            <select class="form-select" name="pais" id="pais" required tabindex="7" onchange="getCiudades(event)">
                                                 <option value="">Seleccione...</option>
                                             </select>
                                         </div>
@@ -121,11 +121,12 @@
             const API_URL_INSTRUC = "//localhost:8080/api/instructores/";
             const API_URL_PROF = "//localhost:8080/api/profesiones/";
             const API_URL_PAISES = "//localhost:8080/api/paises/";
+            const API_URL_CIUDADES = "//localhost:8080/api/ciudades/";
 
             /* Obtenemos los datos para llenar el select de profesiones */
             const OBJ_PROF = document.getElementById('profesion');
 
-            fetch(`${API_URL_PROF + '/listar'}`)
+            fetch(`${API_URL_PROF + 'listar'}`)
                 .then(response => response.json())
                 .then(data => fillProfesiones(data))
                 .catch(error => console.log(error))
@@ -142,7 +143,7 @@
             /* Obtenemos los datos para llenar el select de paises */
             const OBJ_PAIS = document.getElementById('pais');
 
-            fetch(`${API_URL_PAISES + '/listar'}`)
+            fetch(`${API_URL_PAISES + 'listar'}`)
                 .then(response => response.json())
                 .then(data => fillPaises(data))
                 .catch(error => console.log(error))
@@ -154,6 +155,34 @@
                     newOption.text = pais.nombre;
                     OBJ_PAIS.add(newOption);
                 }
+            }
+
+
+            /* Obtenemos las ciudades del pais seleccionado */
+            function getCiudades(e) {
+              let idPais = document.getElementById('pais').value;
+              const OBJ_CIUDAD = document.getElementById('ciudad');
+              OBJ_CIUDAD.options.length = 0;
+              let newOption = document.createElement("option");
+              newOption.value = "";
+              newOption.text = "Seleccione...";
+              OBJ_CIUDAD.add(newOption);
+
+              fetch(`${API_URL_CIUDADES + 'listar'}`)
+                .then(response => response.json())
+                .then(data => fillCiudades(data))
+                .catch(error => console.log(error))
+
+              function fillCiudades(ciudadesJson) {
+                  for (let ciudad of ciudadesJson) {
+                      if (idPais == ciudad.pais.id) {
+                        let newOption = document.createElement("option");
+                        newOption.value = ciudad.idciudad;
+                        newOption.text = ciudad.nombre;
+                        OBJ_CIUDAD.add(newOption);
+                      }
+                  }
+              }
             }
 
             /* Guardamos los datos del formulario */
