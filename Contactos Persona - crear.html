@@ -269,7 +269,7 @@
     const API_URL_PERSONAS = '//localhost:8080/api/personas/'
     const FORM_PERSONAS = document.getElementById("frmPersonas");
 
-    FORM_CURSOS.addEventListener("submit", function (event) {
+    FORM_PERSONAS.addEventListener("submit", function (event) {
       event.preventDefault();
       let transactionFormData = new FormData(FORM_PERSONAS);
 
@@ -305,7 +305,7 @@
             text: "La persona se grabó exitosamente.",
             type: "success"
           }).then(function () {
-            FORM_CURSOS.reset();
+            FORM_PERSONAS.reset();
             codigo.focus();
           });
 
