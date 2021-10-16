@@ -21,174 +21,40 @@
         <div id="menuPpal">
             <menu-Ppal name-File = "Contactos Persona.html"></menu-Ppal>
         </div>
-        <div class="contenido">
+        <div class="contenido" id="contenido-Persona">
           <div class="form">
-                
-            <div class="tab-content">
-                <h1> </h1>
-            
-                <form action="/contacto" method="post">
-
-                    <div class="card">
-                        <h5 class="card-header rounded-top d-flex justify-content-center">Contacto Persona</h5>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-12 col-sm-6 mb-3">
-                                    <label for="cedula">Cedula<span class="req">*</span></label>
-                                    <input type="text" id="cedula" name="cedula" required class="form-control" autocomplete="on" placeholder="Ingrese documento">
-                                </div>
-                                <div class="col-12 col-sm-6 mb-3">
-                                  <label for="tipodoc">Tipo Documento</label>
-                                  <select name="tipodoc" id="tipodoc" class="form-select">
-                                    <option value="">Seleccione...</option>  
-                                    <option value="cc">CC</option>
-                                    <option value="ce">CE</option>
-                                    <option value="nit">NIT</option>
-                                    <option value="nitcc">NITCC</option>
-                                    <option value="regciv">REGCIV</option>
-                                    <option value="ti">TI</option>
-                                  </select>
-                              </div>
-                                <div class="col-12 col-sm-6 mb-3">
-                                    <label for="nombreempresa">Nombre Empresa<span class="req">*</span></label>
-                                    <input type="text" id="nombrepersona" name="nombrepersona" required class="form-control" placeholder="Ingrese el nombre">
-                                </div>
-                                <div class="col-12 col-sm-6 mb-3">
-                                  <label for="teleemp">Telefono Empresa<span class="req">*</span></label>
-                                  <input type="text" id="teleemp" name="telefono" class="form-control" required autocomplete="on" placeholder="Ingrese el teléfono"/>
-                              </div>
-                            </div>
-
-                            <div class="row">
-                                
-                                <div class="col-12 col-sm-6 mb-3">
-                                    <label for="correo">Correo Empresa<span class="req">*</span></label>
-                                    <input type="email" id="correo" name="correo" class="form-control" required autocomplete="off" placeholder="Ingrese el correo"/>
-                                </div>
-                                <div class="col-12 col-sm-6 mb-3">
-                                  <label for="persona|">Nombre Persona<span class="req">*</span></label>
-                                  <input type="persona" id="correo" name="correo" class="form-control" required autocomplete="off" placeholder="Ingrese el nombre"/>
-                              </div>
-                            </div>
-
-                            <div class="row">
-                              <div class="col-12 col-sm-6 mb-3">
-                                <label for="teleper">Telefono Persona<span class="req">*</span></label>
-                                <input type="text" id="teleper" name="teleper" class="form-control" required autocomplete="on" placeholder="Ingrese el teléfono"/>
-                              </div>
-                              <div class="col-12 col-sm-6 mb-3">
-                                <label for="correoper">Correo Persona<span class="req">*</span></label>
-                                <input type="email" id="correoper" name="correo" class="form-control" required autocomplete="off" placeholder="Ingrese el correo"/>
-                            </div>
-                            </div>
-
-                          
-                            <div class="row">
-                                <div class="col-12 col-sm-6 mb-3">
-                                  <label for="cargo">Cargo</label>
-                                  <input type="text" id="cargo" name="cargo" class="form-control" autocomplete="on" placeholder="Ingrese el cargo"/>
-                                </div>
-                                <div class="col-12 col-sm-6 mb-3">
-                                  <label for="profesion">Profesión<span class="req">*</span></label>
-                                  <select name="profesion" id="profesion" class="form-select">
-                                    <option value="">Seleccione...</option>  
-                                    <option value="industrial">Ing. Industrial</option>
-                                    <option value="mecanica">Ing. Mecánica</option>
-                                    <option value="mecatro">Ing. Mecátronica</option>
-                                    <option value="mgica">Ing. Metalúrgica</option>
-                                    <option value="quimica">Ing. Química</option>
-                                  </select>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                              <div class="col-12 col-sm-6 mb-3">
-                                <label>Clasificación<span class="req">*</span></label>
-                                  <select name="etapa" id="etapa" class="form-select">
-                                      <option value="">Seleccione...</option>
-                                      <option value="clienteant">Cliente Antiguo</option>
-                                      <option value="clientenew">Cliente nuevo</option>
-                                      <option value="Lead">Prospecto</option>
-                                  </select>
-                              </div>
-                              <div class="col-12 col-sm-6 mb-3">
-                                <label for="pais">Pais<span class="req">*</span></label>
-                                <select name="pais" id="pais" class="form-select">
-                                  <option value="">Seleccione...</option>
-                                  <option value="brasil">Brasil</option>
-                                  <option value="chile">Chile</option>
-                                  <option value="colombia">Colombia</option>
-                                </select>
-                              </div>
-                            </div>
-
-                            <div class="row">
-                                
-                                <div class="col-12 col-sm-6 mb-3">
-                                    <label for="ciudad">Ciudad<span class="req">*</span></label>
-                                    <select name="ciudad" id="ciudad" class="form-select">
-                                      <option value="">Seleccione...</option>
-                                      <option value="bermeja">Barrancabermeja</option>
-                                      <option value="bogota">Bogota</option>
-                                      <option value="Brasilia">Brasilia</option>
-                                      <option value="bmanga">Bucaramanga</option>
-                                      <option value="Cali">Cali</option>
-                                      <option value="Medellin">Medellin</option>
-                                      <option value="riodejaneiro">Rio de Janeiro</option>
-                                      <option value="SantiagodeChile">Santiago de Chile</option>
-                                      <option value="Saopaulo">Sao Paulo</option>
-                                      <option value="Vina">Viña del mar</option>
-                                    </select>
-                                </div>
-                                <div class="col-12 col-sm-6 mb-3">
-                                  <label for="rut">Rut<span class="req">*</span></label>
-                                  <input type="text" name="rut" id="rut" class="form-control" required autocomplete="on" placeholder="Ingrese el rut"/>
-                                </div>
-                                
-                            </div>
-
-                            
-                            <div class="row">
-                                <div class="col-12 col-sm-12 mb-3">
-                                    <label for="intereses" class="form-label">Intereses<span class="req">*</span></label>
-                                    <textarea class="form-control" id="intereses" name="intereses" rows="3" required></textarea>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                              <div class="col-12 col-sm-3 mb-3">
-                                  <label>Estado del contacto<span class="req">*</span></label>
-                                  <select name="estado" id="estado" class="form-select">
-                                      <option value="A">Activo</option>
-                                      <option value="I">Inactivo</option>
-                                  </select>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
+                  
+              <div class="tab-content">
+                  <div class="col-md">
+                      <br/>
+                  </div>
+                  <div class="card" id="card-tblCurso">
+                      <div class="boton">
+                          <!--button type="submit" class="btn btn-primary">Crear Inscripción</button-->
+                          <a class="btn btn-info" href="Contactos Persona - crear.html" role="button">Crear Persona</a>
+                      </div>
+                      <h3> </h3>
+                      <h5 class="card-header rounded-top d-flex justify-content-center">Listado de Personas</h5>
                       <div class="card-body">
-                          <div class="row">
-                              <div class="boton col-sm-4">
-                                <button type="submit" class="btn btn-primary">Registrar</button>
-                              </div>
-                              <div class="boton col-sm-4">
-                                <button type="submit" class="btn btn-success">Modificar</button>
-                              </div>
-                              <div class="boton col-sm-4">
-                                <button type="submit" class="btn btn-secondary">Consultar</button>
-                              </div>
-                          </div>
-                      </div> <!-- CARD-BODY cerramos clase CARD-BODY de los botones  --ANDERSON-->
-                    </div>
-            
-                </form>
-                
-            </div><!-- tab-content -->
-            
-        </div> <!-- /form -->
-        </div>
+                          <table class="table table-primary table-striped table-hover" name="tblCursos">
+                              <thead>
+                                  <tr>
+                                      <th scope="col" id="col1_persona">C.C. Persona</th>
+                                      <th scope="col" id="col2_persona">Nombre de la Empresa</th>
+                                      <th scope="col" id="col3_persona">Télefono Empresa</th>
+                                      <th scope="col" id="col4_persona">Correo Empresa</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                              </tbody>
+                              <tfoot class="table-primary">
+                              </tfoot>
+                          </table>
+                      </div> <!-- /card-body-->
+                  </div> <!-- /card-->
+              </div><!-- tab-content -->
+          </div> <!-- /form -->
+      </div> <!-- /contenido -->
         <footer>
             <div id="footer_wrapper">
                 <div id="footer">
@@ -199,5 +65,148 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="js/app.js"></script>
+
+    <script>
+      const API_URL_PERSONAS = '//localhost:8080/api/personas/'
+      const MODAL_PERSONA = new bootstrap.Modal(document.getElementById('modalPersona'))
+
+      window.onload=function (){
+          const CONTENEDOR = document.querySelector("tbody");
+          const FOOT = document.querySelector("tfoot");
+          let result = '';
+          let resumen = '';
+      
+          const mostrar = (personas) => {
+              resumen += `<tr>
+                              <td colspan="11"><strong>Total Personas: ${personas.length}</strong></td>
+                          </tr>`
+              personas.forEach(curso => {
+                  result += `<tr>
+                                  <td>${persona.id}</td>
+                                  <td>${persona.nombre}</td>
+                                  <td>${persona.empresa}</td>
+                                  <td>${persona.telefono}</td>
+                                  <td>${persona.correo}</td>
+                                  <td>${persona.telefono}</td>
+                                  <td class="text-success"><i class="bi bi-pencil-square"></i></td>
+                          </tr>`
+              })
+      
+              CONTENEDOR.innerHTML = result
+              FOOT.innerHTML = resumen
+          };
+      
+          fetch(`${API_URL_PERSONAS + 'listar'}`)
+              .then(response => response.json())
+              .then(data => mostrar(data))
+              .catch(error => console.log(error))
+
+          //////////////////////////////////////////////////
+          /* Obtener datos para llenar el select de instructores */
+          const OBJ_INSTR = document.getElementById('Instructor');
+          const API_URL_PERSONAS = '//localhost:8080/api/personas/'
+
+          fetch(`${API_URL_PERSONAS + 'listar'}`)
+              .then(response => response.json())
+              .then(data => fillInstructor(data))
+              .catch(error => console.log(error))
+
+          function fillInstructor(instrJson) {
+              for (let instr of instrJson) {
+                  let newOption = document.createElement("option");
+                  newOption.value = instr.id;
+                  newOption.text = instr.nombre;
+                  OBJ_INSTR.add(newOption);
+              }
+          }
+      }
+
+      /* Manejador de eventos */
+      const on = (element, event, selector, handler) => {
+          element.addEventListener(event, e => {
+              if(e.target.closest(selector)){
+                  handler(e)
+              }
+          })
+      }
+      
+      /* Procedimiento Editar */
+      on(document, 'click', '.bi-pencil-square', e => {
+          let fila = e.target.parentNode.parentNode
+          let idPersona = fila.children[0].innerHTML
+
+          document.getElementById('ModalLabel').innerHTML = 'Modificación de Curso (' + idPersona + ')'
+          document.getElementById('codigo').value = idPersona;
+          document.getElementById('tipodoc').value = fila.children[1].innerHTML;
+          document.getElementById('nombreempresa').value = fila.children[2].innerHTML;
+          document.getElementById('teleemp').value = fila.children[3].innerHTML;
+          document.getElementById('correoempr').value = fila.children[4].innerHTML;
+          document.getElementById('nombrepersona').value = fila.children[5].innerHTML;
+          document.getElementById('teleper').value = fila.children[6].innerHTML;
+          document.getElementById('correoper').value = fila.children[7].innerHTML;
+          document.getElementById('cargo').value = fila.children[8].innerHTML;
+          document.getElementById('profesion').value = fila.children[9].innerHTML;
+          document.getElementById('pais').value = fila.children[10].innerHTML;
+          document.getElementById('ciudad').value = fila.children[11].innerHTML;
+          document.getElementById('rut').value = fila.children[12].innerHTML;
+          document.getElementById('intereses').value = fila.children[13].innerHTML;
+          document.getElementById('estado"').value = fila.children[14].innerHTML,
+           //window.location.href = "inscripcion-crear.html";
+          MODAL_PERSONA.show()
+          
+      })
+
+
+      /* Actualizamos los datos de persona del formulario modal */
+      const FORM_MODAL = document.getElementById("frmModalPersona");
+      FORM_MODAL.addEventListener('submit', (e)=>{
+          e.preventDefault()
+          //const MODAL_CURSO = new bootstrap.Modal(document.getElementById('modalCurso'))
+         
+          let idCurso = document.getElementById('codigo').value;
+          let modalFormData = new FormData(FORM_MODAL);
+
+          const objUpd = {
+            "id": transactionFormData.get("codigo"),
+            "tipodoc": transactionFormData.get("tipodoc"),
+            "nombrempresa": transactionFormData.get("nombrempresa"),
+            "teleemp": transactionFormData.get("teleemp"),
+            "correoemp": transactionFormData.get("correoemp"),
+            "nombrepersona": transactionFormData.get("nombrepersona"),
+            "teleper": transactionFormData.get("teleper"),
+            "correoper": transactionFormData.get("correoper"),
+            "cargo": transactionFormData.get("cargo"),
+            "profesion": transactionFormData.get("profesion"),
+            "pais": transactionFormData.get("pais"),
+            "ciudad": transactionFormData.get("ciudad"),
+            "rut": transactionFormData.get("rut"),
+            "intereses": transactionFormData.get("intereses"),
+            "estado": transactionFormData.get("estado"),
+          };
+
+          fetch(`${API_URL_PERSONAS + 'actualizar/' + idPersona}`, {
+              method: 'PUT',
+              body: JSON.stringify(objUpd),
+              headers: {
+                  'Content-Type':'application/json'
+              },
+          })
+          .then((res) => {
+              res.json();
+              swal({
+                  title: "INFORMACIÓN",
+                  text: "La persona se actualizó exitosamente.",
+                  type: "success"
+              }).then(function() {
+                  MODAL_PERSONA.hide();
+                  location.reload();
+              });
+              
+          })
+          .catch((error) => console.error("Error:", error));
+      })
+
+  </script>
+
 </body>
 </html>
