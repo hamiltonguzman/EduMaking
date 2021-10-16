@@ -36,13 +36,31 @@
                       <h3> </h3>
                       <h5 class="card-header rounded-top d-flex justify-content-center">Listado de Personas</h5>
                       <div class="card-body">
-                          <table class="table table-primary table-striped table-hover" name="tblCursos">
+                          <table class="table table-primary table-striped table-hover" name="tblPersonas">
                               <thead>
                                   <tr>
-                                      <th scope="col" id="col1_persona">C.C. Persona</th>
-                                      <th scope="col" id="col2_persona">Nombre de la Empresa</th>
-                                      <th scope="col" id="col3_persona">Télefono Empresa</th>
-                                      <th scope="col" id="col4_persona">Correo Empresa</th>
+                                      <th scope="col" id="col1_persona">Id.</th>
+                                      <th scope="col" id="col1_persona">Tipo Doc.</th>
+                                      <th scope="col" id="col2_persona">Nombre Empresa</th>
+                                      <th scope="col" id="col3_persona">Télefono</th>
+                                      <th scope="col" id="col4_persona">Email Empresa</th>
+                                      <th scope="col" id="col4_persona">Nombre Persona</th>
+                                      <th scope="col" id="col4_persona">Telef.</th>
+                                      <th scope="col" id="col4_persona">email persona</th>
+                                      <th scope="col" id="col4_persona">cargo</th>
+                                      <th scope="col" id="col4_persona">Id. Prof.</th>
+                                      <th scope="col" id="col4_persona">Profesion</th>
+                                      <th scope="col" id="col4_persona">clasificacion</th>
+                                      <th scope="col" id="col4_persona">Pais</th>
+                                      <th scope="col" id="col4_persona">Id. Ciudad</th>
+                                      <th scope="col" id="col4_persona">Nombre Ciudad</th>
+                                      <th scope="col" id="col4_persona">Rut</th>
+
+                                      
+
+Interes
+estado_persona
+
                                   </tr>
                               </thead>
                               <tbody>
@@ -62,6 +80,167 @@
                 </div> <!-- end of footer -->
            </div> 
         </footer>
+        <!-------------------------------------------------------------------------------------------->
+        <div id="modalPersona" class="modal fade" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title" id="ModalLabel">Modificación de Persona</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="http://localhost:8080/api/personas" method="POST"  id="frmModalPersona">
+                            <div class="row">
+                                <div class="col-12 col-sm-6 mb-3">
+                                  <label for="cedula">Cedula<span class="req">*</span></label>
+                                  <input type="text" id="cedula" name="cedula" required class="form-control" autocomplete="on"
+                                    placeholder="Ingrese documento">
+                                </div>
+                                <div class="col-12 col-sm-6 mb-3">
+                                  <label for="tipodoc">Tipo Documento</label>
+                                  <select name="tipodoc" id="tipodoc" class="form-select">
+                                    <option value="">Seleccione...</option>
+                                    <option value="cc">CC</option>
+                                    <option value="ce">CE</option>
+                                    <option value="nit">NIT</option>
+                                    <option value="nitcc">NITCC</option>
+                                    <option value="regciv">REGCIV</option>
+                                    <option value="ti">TI</option>
+                                  </select>
+                                </div>
+                                <div class="col-12 col-sm-6 mb-3">
+                                  <label for="nombreempresa">Nombre Empresa<span class="req">*</span></label>
+                                  <input type="text" id="nombrempresa" name="nombrempresa" required class="form-control"
+                                    placeholder="Ingrese el nombre">
+                                </div>
+                                <div class="col-12 col-sm-6 mb-3">
+                                  <label for="teleemp">Telefono Empresa<span class="req">*</span></label>
+                                  <input type="text" id="teleemp" name="teleemp" class="form-control" required autocomplete="on"
+                                    placeholder="Ingrese el teléfono" />
+                                </div>
+                              </div>
+              
+                              <div class="row">
+              
+                                <div class="col-12 col-sm-6 mb-3">
+                                  <label for="correo">Correo Empresa<span class="req">*</span></label>
+                                  <input type="email" id="correoemp" name="correoemp" class="form-control" required autocomplete="off"
+                                    placeholder="Ingrese el correo" />
+                                </div>
+                                <div class="col-12 col-sm-6 mb-3">
+                                  <label for="persona|">Nombre Persona<span class="req">*</span></label>
+                                  <input type="persona" id="nombrepersona" name="nombrepersona" class="form-control" required autocomplete="off"
+                                    placeholder="Ingrese el nombre" />
+                                </div>
+                              </div>
+              
+                              <div class="row">
+                                <div class="col-12 col-sm-6 mb-3">
+                                  <label for="teleper">Telefono Persona<span class="req">*</span></label>
+                                  <input type="text" id="teleper" name="teleper" class="form-control" required autocomplete="on"
+                                    placeholder="Ingrese el teléfono" />
+                                </div>
+                                <div class="col-12 col-sm-6 mb-3">
+                                  <label for="correoper">Correo Persona<span class="req">*</span></label>
+                                  <input type="email" id="correoper" name="correoper" class="form-control" required autocomplete="off"
+                                    placeholder="Ingrese el correo" />
+                                </div>
+                              </div>
+              
+              
+                              <div class="row">
+                                <div class="col-12 col-sm-6 mb-3">
+                                  <label for="cargo">Cargo</label>
+                                  <input type="text" id="cargo" name="cargo" class="form-control" autocomplete="on"
+                                    placeholder="Ingrese el cargo" />
+                                </div>
+                                <div class="col-12 col-sm-6 mb-3">
+                                  <label for="profesion">Profesión<span class="req">*</span></label>
+                                  <select name="profesion" id="profesion" class="form-select">
+                                    <option value="">Seleccione...</option>
+                                    <option value="industrial">Ing. Industrial</option>
+                                    <option value="mecanica">Ing. Mecánica</option>
+                                    <option value="mecatro">Ing. Mecátronica</option>
+                                    <option value="mgica">Ing. Metalúrgica</option>
+                                    <option value="quimica">Ing. Química</option>
+                                  </select>
+                                </div>
+                              </div>
+              
+                              <div class="row">
+                                <div class="col-12 col-sm-6 mb-3">
+                                  <label>Clasificación<span class="req">*</span></label>
+                                  <select name="clasificacion" id="clasificacion" class="form-select">
+                                    <option value="">Seleccione...</option>
+                                    <option value="clienteant">Cliente Antiguo</option>
+                                    <option value="clientenew">Cliente nuevo</option>
+                                    <option value="Lead">Prospecto</option>
+                                  </select>
+                                </div>
+                                <div class="col-12 col-sm-6 mb-3">
+                                  <label for="pais">Pais<span class="req">*</span></label>
+                                  <select name="pais" id="pais" class="form-select">
+                                    <option value="">Seleccione...</option>
+                                    <option value="brasil">Brasil</option>
+                                    <option value="chile">Chile</option>
+                                    <option value="colombia">Colombia</option>
+                                  </select>
+                                </div>
+                              </div>
+              
+                              <div class="row">
+              
+                                <div class="col-12 col-sm-6 mb-3">
+                                  <label for="ciudad">Ciudad<span class="req">*</span></label>
+                                  <select name="ciudad" id="ciudad" class="form-select">
+                                    <option value="">Seleccione...</option>
+                                    <option value="bermeja">Barrancabermeja</option>
+                                    <option value="bogota">Bogota</option>
+                                    <option value="Brasilia">Brasilia</option>
+                                    <option value="bmanga">Bucaramanga</option>
+                                    <option value="Cali">Cali</option>
+                                    <option value="Medellin">Medellin</option>
+                                    <option value="riodejaneiro">Rio de Janeiro</option>
+                                    <option value="SantiagodeChile">Santiago de Chile</option>
+                                    <option value="Saopaulo">Sao Paulo</option>
+                                    <option value="Vina">Viña del mar</option>
+                                  </select>
+                                </div>
+                                <div class="col-12 col-sm-6 mb-3">
+                                  <label for="rut">Rut<span class="req">*</span></label>
+                                  <input type="text" name="rut" id="rut" class="form-control" required autocomplete="on"
+                                    placeholder="Ingrese el rut" />
+                                </div>
+              
+                              </div>
+              
+              
+                              <div class="row">
+                                <div class="col-12 col-sm-12 mb-3">
+                                  <label for="intereses" class="form-label">Intereses<span class="req">*</span></label>
+                                  <textarea class="form-control" id="intereses" name="intereses" rows="3" required></textarea>
+                                </div>
+                              </div>
+              
+                              <div class="row">
+                                <div class="col-12 col-sm-3 mb-3">
+                                  <label>Estado del contacto<span class="req">*</span></label>
+                                  <select name="estado" id="estado" class="form-select">
+                                    <option value="A">Activo</option>
+                                    <option value="I">Inactivo</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+              
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--------------------------------------------------------------------------------------------->
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="js/app.js"></script>
