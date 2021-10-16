@@ -1,141 +1,341 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/maincss.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
-    <link rel="icon" href="Imagen/Logo.png">
-    
-    <title>EduMaking-CRM - Instructor</title>
-</head>
-<body>
-    <div class="cuerpoCompleto" display= "flex" justify-content= "center">
-        <header>
-            <div class="cabeza">
-                <img src="Imagen/logoEslogan1.png" >
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/maincss.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <link rel="icon" href="Imagen/Logo.png">
+        <title>EduMaking-CRM - Instructores</title>
+    </head>
+    <body>
+        <div class="cuerpoCompleto" display= "flex" justify-content= "center">
+            <header>
+                <div class="cabeza">
+                    <img src="Imagen/logoEslogan1.png" >
+                </div>
+            </header>
+            <div id="menuPpal">
+                <menu-Ppal name-File = "Instructor.html"></menu-Ppal>
             </div>
-        </header>
-        <div id="menuPpal">
-            <menu-Ppal name-File = "Instructor.html"></menu-Ppal>
-        </div>
-        <div class="contenido">
-          <div class="form">
- 
-            <div class="tab-content">
-                <br/>
-            
-                <form action="/contacto" method="post">
-                  <!-- Estos son estilos de bootstrap y comienza con la clase CARD como un contenedor para todos los campos junto con la clase CARD-BODY --ANDERSON -->
-                  <div class="card">
-                    <h5 class="card-header rounded-top d-flex justify-content-center">Instructor</h5>
-                    <div class="card-body">
-                      <!-- nos ayuda a colocar los campor CEDULA y  ESTADO en una sola linea con los clases COL-12 COL-SM-6 --ANDERSON-->  
-                      <div class="row">
-                            <div class="col-12 col-sm-6 mb-3">
-                              <label for="cedula">Cédula<span class="req">*</span></label>
-                              <input type="text" id="cedula" name="cedula" required autocomplete="off" class="form-control">
-                            </div>
-                            <div class="col-12 col-sm-6 mb-3">
-                              <label for="estado">Estado<span class="req">*</span></label>
-                              <!-- este es un campo de seleccion tal como lo he PAIS y CIUDAD  --ANDERSON-->  
-                              <select name="estado" id="estado" class="form-select">
-                                <option value="">Seleccione...</option>
-                                <option value="Activo">Activo</option>
-                                <option value="Inactivo">Inactivo</option>
-                              </select>
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
-                          <label for="nombreinstructor">Nombre del Instructor<span class="req">*</span></label>
-                          <input type="text" id="nombreinstructor" name="nombreinstructor" required autocomplete="off" 
-                          class="form-control">
-                        </div>
-
-                        <div class="row">
-                            <div class="col-12 col-sm-6 mb-3">
-                              <label for="telefono">Teléfono<span class="req">*</span></label>
-                              <input type="text" id="telefono" name="telefono" required autocomplete="off" class="form-control">
-                            </div>
-                            <div class="col-12 col-sm-6 mb-3">
-                              <label for="correo">Correo Electrónico<span class="req">*</span></label>
-                              <input type="email" id="correo" name="correo" required autocomplete="off" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
-                          <label for="profesion">Profesion<span class="req">*</span></label>
-                          <select name="profesion" id="profesion" class="form-select">
-                            <option value="">Seleccione...</option>
-                            <option value="IngenieroCivil">Ingeniero civil</option>
-                            <option value="IngenieroPetroleos">Ingeniero de Petroleos</option>
-                            <option value="IngenieroHidrico">Ingeniero de recursos hídricos y gestión ambiental</option>
-                          </select>
-                        </div>
-                        
-                        <div class="mb-3">
-                          <label for="experiencia">Incluya la experiencia laboral del instructor.<span class="req">*</span></label>
-                          <input type="text" id="experiencia" name="experiencia" required autocomplete="off" class="form-control">
-                        </div>
-                        
-                        <div class="row">
-                          <div class="col-12 col-sm-6 mb-3">
-                              <label for="pais">Pais<span class="req">*</span></label>
-                              <select name="pais" id="pais" class="form-select">
-                                <option value="">Seleccione...</option>
-                                <option value="Colombia">Cololmbia</option>
-                                <option value="España">España</option>
-                              </select>
-                          </div>
-                          
-                          <div class="col-12 col-sm-6 mb-3">
-                              <label for="ciudad">ciudad<span class="req">*</span></label>
-                                <select name="ciudad" id="ciudad" class="form-select">
-                                  <option value="">Seleccione...</option>
-                                  <option value="Bucaramanga">Bucaramanga</option>
-                                  <option value="Barrancabermeja">Barrancabermeja</option>
-                                  <option value="Bogota">Bogotá</option>
-                                  <option value="Madrid">Madrid</option>
-                                </select>
-                          </div>
-                        </div>
-                    </div> <!-- CARD-BODY cerramos clase CARD-BODY del formulario principal --ANDERSON-->
-                  </div> <!-- CARD cerramos clase CARD del formulario principal  --ANDERSON-->
-                  <!-- Se borro el anterio boton y se incluyeron estos con los estilos de bootstrap  --ANDERSON-->
-                  <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="boton col-sm-4">
-                              <button type="submit" class="btn btn-primary">Registrar</button>
-                            </div>
-                            <div class="boton col-sm-4">
-                              <button type="submit" class="btn btn-success">Modificar</button>
-                            </div>
-                            <div class="boton col-sm-4">
-                              <button type="submit" class="btn btn-secondary">Consultar</button>
-                            </div>
-                        </div>
-                      </div> <!-- CARD-BODY cerramos clase CARD-BODY de los botones  --ANDERSON-->
+            <div class="contenido" id="contenido-Instr">
+              <div class="form">
+                <div class="tab-content">
+                    <div class="col-md">
+                        <br/>
                     </div>
-                 </form>
-                
-            </div><!-- tab-content -->
-            
-        </div> <!-- /form -->
-        </div>
-        <footer>
-            <div id="footer_wrapper">
-                <div id="footer">
-                    Copyright © 2021 <a href="#">EduMaking</a> - Design: <a href="#">Grupo 7</a>
-                </div> <!-- end of footer -->
-           </div> 
-        </footer>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="js/app.js"></script>
-</body>
+                    <div class="card" id="card-tblInstructores">
+                        <div class="boton">
+                          <a class="btn btn-info" href="instructor-crear.html" role="button">Crear Instructor</a>
+                        </div>
+                        <h3> </h3>
+                        <h5 class="card-header rounded-top d-flex justify-content-center">Listado de Instructores</h5>
+                        <div class="card-body">
+                        <table class="table table-primary table-striped table-hover" name="tblInstructores">
+                            <thead>
+                                <tr>
+                                    <th scope="col" id="col1_instr">Id.</th>
+                                    <th scope="col" id="col2_instr">Nombre</th>
+                                    <th scope="col" id="col3_instr">Telefonos</th>
+                                    <th scope="col" id="col4_instr">Email</th>
+                                    <th scope="col" id="col5_instr">Id.</th>
+                                    <th scope="col" id="col6_instr">Profesión</th>
+                                    <th scope="col" id="col7_instr">Experiencia</th>
+                                    <th scope="col" id="col8_instr">País</th>
+                                    <th scope="col" id="col9_instr">Cód.</th>
+                                    <th scope="col" id="col10_instr">Ciudad</th>
+                                    <th scope="col" id="col11_instr">Estado</th>
+                                    <th scope="col" id="col12">Editar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                            <tfoot class="table-primary">
+                            </tfoot>
+                        </table>
+                        </div> <!-- /card-body-->
+                    </div> <!-- /card-->
+                </div><!-- tab-content -->
+            </div> <!-- /form -->
+            </div> <!-- /contenido -->
+            <footer>
+                <div id="footer_wrapper">
+                    <div id="footer">
+                        Copyright © 2021 <a href="#">EduMaking</a> - Design: <a href="#">Grupo 7</a>
+                    </div> <!-- end of footer -->
+            </div> 
+            </footer>
+            <!-------------------------------------------------------------------------------------------->
+            <div id="modalInstructor" class="modal fade" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header bg-primary text-white">
+                            <h5 class="modal-title" id="ModalLabel">Modificación de Instructor</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="http://localhost:8080/api/instructores" method="POST"  id="frmModalInstructores">
+                                <div class="row">
+                                  <div class="col-12 col-sm-4 mb-3">
+                                      <label for="id">Identificación<span class="req">*</span></label>
+                                      <input type="text" id="id" name="id" required class="form-control" autocomplete="off" disabled tabindex="1">
+                                  </div>
+                                  <div class="col-12 col-sm-8 mb-3">
+                                      <label for="nombre">Nombre<span class="req">*</span></label>
+                                      <input type="text" id="nombre" name="nombre" required class="form-control" autocomplete="off" tabindex="2">
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-12 col-sm-6 mb-3">
+                                      <label for="telef">Teléfono</label>
+                                      <input type="phone" id="telef" name="telef" class="form-control" autocomplete="off" tabindex="3">
+                                  </div>
+                                  <div class="col-12 col-sm-6 mb-3">
+                                      <label for="email">Email<span class="req">*</span></label>
+                                      <input type="email" id="email" name="email" required class="form-control" autocomplete="off" placeholder = "name@example.com" tabindex="4">
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-12 col-sm-8 mb-3">
+                                      <label for="profesion">Profesión<span class="req">*</span></label>
+                                      <select required class="form-select" name="profesion" id="profesion" tabindex="5">
+                                          <option value="">Seleccione...</option>
+                                      </select>
+                                  </div>
+                                  <div class="col-12 col-sm-4 mb-3">
+                                      <label for="finicio">Fecha Inicio Experiencia<span class="req">*</span></label>
+                                      <input type="date" id="finicio" name="finicio" class="form-control" required tabindex="6">
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-12 col-sm-4 mb-3">
+                                      <label for="pais">País<span class="req">*</span></label>
+                                      <select class="form-select" name="pais" id="pais" required tabindex="7" onchange="getCiudades()">
+                                          <option value="">Seleccione...</option>
+                                      </select>
+                                  </div>
+                                  <div class="col-12 col-sm-4 mb-3">
+                                      <label for="ciudad">Ciudad<span class="req">*</span></label>
+                                      <select class="form-select" name="ciudad" id="ciudad" required tabindex="8">
+                                          <option value="">Seleccione...</option>
+                                      </select>
+                                  </div>
+                                  <div class="col-12 col-sm-4 mb-3">
+                                      <label for="estado">Estado<span class="req">*</span></label>
+                                      <select class="form-select" name="estado" id="estado" required tabindex="9">
+                                          <option value="ACTIVO">ACTIVO</option>
+                                          <option value="INACTIVO">INACTIVO</option>
+                                      </select>
+                                  </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">Actualizar</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--------------------------------------------------------------------------------------------->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="js/app.js"></script>
+        <!--script src = "js/crudInscr.js" type = "module"></script-->
+        
+        <script>
+            const MODAL_INSTR = new bootstrap.Modal(document.getElementById('modalInstructor'));
+            const FORM = document.getElementById("frmInstructores");
+            const API_URL_INSTR = '//localhost:8080/api/instructores/';
+            const API_URL_PROF = "//localhost:8080/api/profesiones/";
+            const API_URL_PAISES = "//localhost:8080/api/paises/";
+            const API_URL_CIUDADES = "//localhost:8080/api/ciudades/";
+
+            window.onload=function (){
+              /////////////////////////////////////////////////////////////////
+              /* Obtenemos los datos para llenar el select de profesiones */
+              const OBJ_PROF = document.getElementById('profesion');
+
+              fetch(`${API_URL_PROF + 'listar'}`)
+                  .then(response => response.json())
+                  .then(data => fillProfesiones(data))
+                  .catch(error => console.log(error))
+
+              function fillProfesiones(profJson) {
+                  for (let prof of profJson) {
+                      let newOption = document.createElement("option");
+                      newOption.value = prof.id;
+                      newOption.text = prof.nombre;
+                      OBJ_PROF.add(newOption);
+                  }
+              }
+
+              /* Obtenemos los datos para llenar el select de paises */
+              const OBJ_PAIS = document.getElementById('pais');
+
+              fetch(`${API_URL_PAISES + 'listar'}`)
+                  .then(response => response.json())
+                  .then(data => fillPaises(data))
+                  .catch(error => console.log(error))
+
+              function fillPaises(paisesJson) {
+                  for (let pais of paisesJson) {
+                      let newOption = document.createElement("option");
+                      newOption.value = pais.id;
+                      newOption.text = pais.nombre;
+                      OBJ_PAIS.add(newOption);
+                  }
+              }
+
+              ////////////////////////////////////////////////////////////////
+
+              /* Llenar tabla de instructores */
+              const CONTENEDOR = document.querySelector("tbody");
+              const FOOT = document.querySelector("tfoot");
+              let result = '';
+              let resumen = '';
+          
+              const mostrar = (instr) => {
+                  resumen += `<tr>
+                                  <td colspan="12"><strong>Total Cursos: ${instr.length}</strong></td>
+                              </tr>`
+                  instr.forEach(instr => {
+                      result += `<tr>
+                                      <td>${instr.id}</td>
+                                      <td>${instr.nombre}</td>
+                                      <td>${instr.telef}</td>
+                                      <td>${instr.email}</td>
+                                      <td>${instr.profesion.id}</td>
+                                      <td>${instr.profesion.nombre}</td>
+                                      <td>${instr.fInicioExp}</td>
+                                      <td>${instr.pais.id}</td>
+                                      <td>${instr.ciudad.idciudad}</td>
+                                      <td>${instr.ciudad.nombre}</td>
+                                      <td>${instr.estado}</td>
+                                      <td class="text-success"><i class="bi bi-pencil-square"></i></td>
+                              </tr>`
+                  })
+          
+                  CONTENEDOR.innerHTML = result
+                  FOOT.innerHTML = resumen
+              };
+          
+              fetch(`${API_URL_INSTR + 'listar'}`)
+                  .then(response => response.json())
+                  .then(data => mostrar(data))
+                  .catch(error => console.log(error))
+            }
+
+            /* Manejador de eventos */
+            const on = (element, event, selector, handler) => {
+              element.addEventListener(event, e => {
+                  if(e.target.closest(selector)){
+                      handler(e)
+                  }
+              })
+          }
+          
+          /* Procedimiento Editar */
+          on(document, 'click', '.bi-pencil-square', e => {
+              let fila = e.target.parentNode.parentNode
+              let idInstr = fila.children[0].innerHTML
+
+              document.getElementById('ModalLabel').innerHTML = 'Modificación de Instructor (Id. ' + idInstr + ')'
+              document.getElementById('id').value = idInstr;
+              document.getElementById('nombre').value = fila.children[1].innerHTML;
+              document.getElementById('telef').value = fila.children[2].innerHTML;
+              document.getElementById('email').value = fila.children[3].innerHTML;
+              document.getElementById('profesion').value = fila.children[4].innerHTML;
+              document.getElementById('finicio').value = fila.children[6].innerHTML;
+              document.getElementById('pais').value = fila.children[7].innerHTML;
+              getCiudades();
+              document.getElementById('ciudad').value = fila.children[8].innerHTML;
+              document.getElementById('estado').value = fila.children[10].innerHTML;
+
+              //window.location.href = "inscripcion-crear.html";
+              MODAL_INSTR.show()
+          })
+
+          /* Obtenemos las ciudades del pais seleccionado */
+          function getCiudades() {
+            let idPais = document.getElementById('pais').value;
+            const OBJ_CIUDAD = document.getElementById('ciudad');
+            OBJ_CIUDAD.options.length = 0;
+            let newOption = document.createElement("option");
+            newOption.value = "";
+            newOption.text = "Seleccione...";
+            OBJ_CIUDAD.add(newOption);
+
+            fetch(`${API_URL_CIUDADES + 'listar'}`)
+              .then(response => response.json())
+              .then(data => fillCiudades(data))
+              .catch(error => console.log(error))
+
+            function fillCiudades(ciudadesJson) {
+                for (let ciudad of ciudadesJson) {
+                    if (idPais == ciudad.pais.id) {
+                      let newOption = document.createElement("option");
+                      newOption.value = ciudad.idciudad;
+                      newOption.text = ciudad.nombre;
+                      OBJ_CIUDAD.add(newOption);
+                    }
+                }
+            }
+          }
+
+
+          /* Actualizamos los datos de instructores del formulario modal */
+          const FORM_MODAL = document.getElementById("frmModalInstructores");
+
+          FORM_MODAL.addEventListener('submit', (e)=>{
+              e.preventDefault()
+              
+              let idInstr = document.getElementById('id').value;
+              let modalFormData = new FormData(FORM_MODAL);
+
+              const objUpd = {
+                "id": modalFormData.get("id"),
+                "nombre": modalFormData.get("nombre"),
+                "telef": modalFormData.get("telef"),
+                "email": modalFormData.get("email"),
+                "profesion": {"id": modalFormData.get("profesion")},
+                "fInicioExp": modalFormData.get("finicio"),
+                "pais": {"id": modalFormData.get("pais")},
+                "ciudad": {"idciudad": modalFormData.get("ciudad")},
+                "estado": modalFormData.get("estado")
+              };
+
+              fetch(`${API_URL_INSTR + 'actualizar/' + idInstr}`, {
+                  method: 'PUT',
+                  body: JSON.stringify(objUpd),
+                  headers: {
+                      'Content-Type':'application/json'
+                  },
+              })
+              .then((res) => {
+                  res.json();
+                  swal({
+                      title: "INFORMACIÓN",
+                      text: "El instructor se actualizó exitosamente.",
+                      type: "success"
+                  }).then(function() {
+                      MODAL_INSTR.hide();
+                      location.reload();
+                  });
+                  
+              })
+              .catch((error) => console.error("Error:", error));
+          })
+
+          
+        </script>
+    </body>
 </html>

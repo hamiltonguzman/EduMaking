@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/maincss.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <link rel="icon" href="Imagen/Logo.png">
+        <title>EduMaking-CRM - Instructor</title>
+    </head>
+    <body>
+        <div class="cuerpoCompleto" display= "flex" justify-content= "center">
+            <header>
+                <div class="cabeza">
+                    <img src="Imagen/logoEslogan1.png" >
+                </div>
+            </header>
+            
+            <div id="menuPpal">
+                <menu-Ppal name-File = "Instructor.html"></menu-Ppal>
+            </div>
+
+            <div class="contenido">
+                <div class="form">
+                    
+                    <div class="tab-content">
+                        <br/>
+                        <form action="http://localhost:8080/api/instructores" method="POST" id="frmInstructores">
+                            <div class="card">
+                                <h3> </h3>
+                                <h5 class="card-header rounded-top d-flex justify-content-center">Instructor</h5>
+                                <div class="card-body">
+                                    <div class="row">
+                                          <div class="col-12 col-sm-4 mb-3">
+                                              <label for="id">Identificación<span class="req">*</span></label>
+                                              <input type="text" id="id" name="id" required class="form-control" autocomplete="off" tabindex="1">
+                                          </div>
+                                          <div class="col-12 col-sm-8 mb-3">
+                                              <label for="nombre">Nombre<span class="req">*</span></label>
+                                              <input type="text" id="nombre" name="nombre" required class="form-control" autocomplete="off" tabindex="2">
+                                          </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 col-sm-6 mb-3">
+                                            <label for="telef">Teléfono</label>
+                                            <input type="phone" id="telef" name="telef" class="form-control" autocomplete="off" tabindex="3">
+                                        </div>
+                                        <div class="col-12 col-sm-6 mb-3">
+                                            <label for="email">Email<span class="req">*</span></label>
+                                            <input type="email" id="email" name="email" required class="form-control" autocomplete="off" placeholder = "name@example.com" tabindex="4">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-12 col-sm-8 mb-3">
+                                            <label for="profesion">Profesión<span class="req">*</span></label>
+                                            <select required class="form-select" name="profesion" id="profesion" tabindex="5">
+                                                <option value="">Seleccione...</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12 col-sm-4 mb-3">
+                                            <label for="finicio">Fecha Inicio Experiencia<span class="req">*</span></label>
+                                            <input type="date" id="finicio" name="finicio" class="form-control" required tabindex="6">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 col-sm-4 mb-3">
+                                            <label for="pais">País<span class="req">*</span></label>
+                                            <select class="form-select" name="pais" id="pais" required tabindex="7" onchange="getCiudades(event)">
+                                                <option value="">Seleccione...</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12 col-sm-4 mb-3">
+                                            <label for="ciudad">Ciudad<span class="req">*</span></label>
+                                            <select class="form-select" name="ciudad" id="ciudad" required tabindex="8">
+                                                <option value="">Seleccione...</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12 col-sm-4 mb-3">
+                                            <label for="estado">Estado<span class="req">*</span></label>
+                                            <select class="form-select" name="estado" id="estado" required tabindex="9">
+                                                <option value="ACTIVO">ACTIVO</option>
+                                                <option value="INACTIVO">INACTIVO</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!--a href="#" class="btn btn-primary">Crear Inscripcion</a-->
+                                </div> <!--card-body-->
+                            </div> <!--card-->
+
+                            <div class="row">
+                                <div class="boton col-12 col-sm-8">
+                                    <button type="submit" class="btn btn-primary">Registrar</button>
+                                </div>
+                                <div class="boton col-12 col-sm-4">
+                                    <a class="btn btn-info" href="instructor.html" role="button">Volver al Listado</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div><!-- tab-content -->
+                </div> <!-- /form -->
+            </div> <!--contenido-->
+            <footer>
+                <div id="footer_wrapper">
+                    <div id="footer">
+                        Copyright © 2021 <a href="#">EduMaking</a> - Design: <a href="#">Grupo 7</a>
+                    </div> <!-- end of footer -->
+                </div> 
+            </footer>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="js/app.js"></script>
+        <script>
+            const FORM = document.getElementById("frmInstructores");
+            const API_URL_INSTRUC = "//localhost:8080/api/instructores/";
+            const API_URL_PROF = "//localhost:8080/api/profesiones/";
+            const API_URL_PAISES = "//localhost:8080/api/paises/";
+            const API_URL_CIUDADES = "//localhost:8080/api/ciudades/";
+
+            /* Obtenemos los datos para llenar el select de profesiones */
+            const OBJ_PROF = document.getElementById('profesion');
+
+            fetch(`${API_URL_PROF + 'listar'}`)
+                .then(response => response.json())
+                .then(data => fillProfesiones(data))
+                .catch(error => console.log(error))
+
+            function fillProfesiones(profJson) {
+                for (let prof of profJson) {
+                    let newOption = document.createElement("option");
+                    newOption.value = prof.id;
+                    newOption.text = prof.nombre;
+                    OBJ_PROF.add(newOption);
+                }
+            }
+
+            /* Obtenemos los datos para llenar el select de paises */
+            const OBJ_PAIS = document.getElementById('pais');
+
+            fetch(`${API_URL_PAISES + 'listar'}`)
+                .then(response => response.json())
+                .then(data => fillPaises(data))
+                .catch(error => console.log(error))
+
+            function fillPaises(paisesJson) {
+                for (let pais of paisesJson) {
+                    let newOption = document.createElement("option");
+                    newOption.value = pais.id;
+                    newOption.text = pais.nombre;
+                    OBJ_PAIS.add(newOption);
+                }
+            }
+
+
+            /* Obtenemos las ciudades del pais seleccionado */
+            function getCiudades(e) {
+              let idPais = document.getElementById('pais').value;
+              const OBJ_CIUDAD = document.getElementById('ciudad');
+              OBJ_CIUDAD.options.length = 0;
+              let newOption = document.createElement("option");
+              newOption.value = "";
+              newOption.text = "Seleccione...";
+              OBJ_CIUDAD.add(newOption);
+
+              fetch(`${API_URL_CIUDADES + 'listar'}`)
+                .then(response => response.json())
+                .then(data => fillCiudades(data))
+                .catch(error => console.log(error))
+
+              function fillCiudades(ciudadesJson) {
+                  for (let ciudad of ciudadesJson) {
+                      if (idPais == ciudad.pais.id) {
+                        let newOption = document.createElement("option");
+                        newOption.value = ciudad.idciudad;
+                        newOption.text = ciudad.nombre;
+                        OBJ_CIUDAD.add(newOption);
+                      }
+                  }
+              }
+            }
+
+            /* Guardamos los datos del formulario */
+            FORM.addEventListener("submit", function (event) {
+                event.preventDefault();
+                let transactionFormData = new FormData(FORM);
+
+                const obj = {
+                  "id": transactionFormData.get("id"),
+                  "nombre": transactionFormData.get("nombre"),
+                  "telef": transactionFormData.get("telef"),
+                  "email": transactionFormData.get("email"),
+                  "profesion": {
+                      "id": transactionFormData.get("profesion")
+                  },
+                  "fInicioExp": transactionFormData.get("finicio"),
+                  "pais": {
+                      "id": transactionFormData.get("pais")
+                  },
+                  "ciudad": {
+                      "idciudad": transactionFormData.get("ciudad")
+                  },
+                  "estado": transactionFormData.get("estado")
+                };
+
+                fetch(`${API_URL_INSTRUC}`, {
+                    method: "POST",
+                    body: JSON.stringify(obj),
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                })
+                .then((res) => {
+                    res.json();
+                    swal({
+                        title: "INFORMACIÓN",
+                        text: "El instructor se grabó exitosamente.",
+                        type: "success"
+                    }).then(function() {
+                        FORM.reset();
+                        id.focus();
+                    });
+                    
+                })
+                .catch((error) => console.error("Error:", error));
+            })
+        </script>
+    </body>
+</html>

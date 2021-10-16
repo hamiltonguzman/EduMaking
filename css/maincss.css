@@ -141,7 +141,7 @@ input:focus {
 /* end of footer */
 
 /* creado harold */
-#contenido-Inscr, #contenido-Curso {
+#contenido-Inscr, #contenido-Curso, #contenido-Instr {
   /*width: 800px;*/
   width: 80%;
   margin: 0px auto;
@@ -149,12 +149,12 @@ input:focus {
   /* padding-right: 0%; */
 }
 
-#card-tblInscripciones, #card-tblCurso {
+#card-tblInscripciones, #card-tblCurso, #card-tblInstructores {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
 }
 
-#tblInscripciones, #tblCursos {
+#tblInscripciones, #tblCursos, #tblInstructores {
   /*table-layout: fixed;*/
   width: 100%;
   border-collapse: collapse;
@@ -240,6 +240,55 @@ input:focus {
 
 #col7_curso {
   width: 5%;
+}
+
+/* tabla instructores */
+#col1_instr {
+  width: 5%;
+}
+
+#col2_instr {
+  width: 15%;
+}
+
+#col3_instr {
+  width: 5%;
+}
+
+#col4_instr {
+  width: 5%;
+}
+
+#col5_instr {
+  width: 2%;
+}
+
+#col6_instr {
+  width: 20%;
+}
+
+#col7_instr {
+  width: 5%;
+}
+
+#col8_instr {
+  width: 5%;
+}
+
+#col9_instr {
+  width: 5%;
+}
+
+#col10_instr {
+  width: 5%;
+}
+
+#col11_instr {
+  width: 5%;
+}
+
+#col12_instr {
+  width: 2%;
 }
 
 /*#modal fade {

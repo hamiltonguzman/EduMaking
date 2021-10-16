@@ -50,7 +50,7 @@
                                     <div class="row">
                                         <div class="col-12 col-sm-4 mb-3">
                                             <label for="idestudiante">Ident. del Estudiante<span class="req">*</span></label>
-                                            <input type="text" id="idestudiante" name="idestudiante" required class="form-control"  onchange="runScriptEstud(event)" tabindex="3">
+                                            <input type="text" id="idestudiante" name="idestudiante" required class="form-control"  onchange="runScriptEstud(event)" tabindex="2">
                                         </div>
                                         <div class="col-12 col-sm-8 mb-3">
                                             <label for="nomestudiante">Nombre</label>
@@ -61,17 +61,17 @@
                                     <div class="row">
                                         <div class="col-12 col-sm-4 mb-3">
                                             <label for="finicio">Fecha Inicio<span class="req">*</span></label>
-                                            <input type="date" id="finicio" name="finicio" min="2000-01-01" max="2050-12-31" class="form-control" required>
+                                            <input type="date" id="finicio" name="finicio" min="2000-01-01" max="2050-12-31" class="form-control" required tabindex="3">
                                         </div>
 
                                         <div class="col-12 col-sm-4 mb-3">
                                             <label for="ffin">Fecha Fin<span class="req">*</span></label>
-                                            <input type="date" id="ffin" name="ffin" min="2000-01-01" max="2050-12-31" class="form-control" required>
+                                            <input type="date" id="ffin" name="ffin" min="2000-01-01" max="2050-12-31" class="form-control" required tabindex="4">
                                         </div>
 
                                         <div class="col-12 col-sm-4 mb-3">
                                             <label for="estadocertif">Certificado<span class="req">*</span></label>
-                                            <select class="form-select" name="estadocertif" id="estadocertif" required>
+                                            <select class="form-select" name="estadocertif" id="estadocertif" required tabindex="5">
                                                 <option value="">Seleccione...</option>
                                                 <option value="ENTREGADO">Entregado</option>
                                                 <option value="NO ENTREGADO">No Entregado</option>

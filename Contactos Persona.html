@@ -19,10 +19,11 @@
             </div>
         </header>
         <div id="menuPpal">
-            <menu-Ppal name-File = "Contactos Persona.html"></menu-Ppal>
+            <menu-Ppal name-File = "Contactos Persona - crear.html"></menu-Ppal>
         </div>
         <div class="contenido" id="contenido-Persona">
           <div class="form">
+<<<<<<< HEAD
                   
               <div class="tab-content">
                   <div class="col-md">
@@ -35,6 +36,153 @@
                       </div>
                       <h3> </h3>
                       <h5 class="card-header rounded-top d-flex justify-content-center">Listado de Personas</h5>
+=======
+                
+            <div class="tab-content">
+                <h1> </h1>
+            
+                <form action="/contacto" method="post">
+
+                    <div class="card">
+                        <h5 class="card-header rounded-top d-flex justify-content-center">Contacto Persona</h5>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 col-sm-6 mb-3">
+                                    <label for="cedula">Cedula<span class="req">*</span></label>
+                                    <input type="text" id="cedula" name="cedula" required class="form-control" autocomplete="on" placeholder="Ingrese documento">
+                                </div>
+                                <div class="col-12 col-sm-6 mb-3">
+                                  <label for="tipodoc">Tipo Documento</label>
+                                  <select name="tipodoc" id="tipodoc" class="form-select">
+                                    <option value="">Seleccione...</option>  
+                                    <option value="cc">CC</option>
+                                    <option value="ce">CE</option>
+                                    <option value="nit">NIT</option>
+                                    <option value="nitcc">NITCC</option>
+                                    <option value="regciv">REGCIV</option>
+                                    <option value="ti">TI</option>
+                                  </select>
+                              </div>
+                                <div class="col-12 col-sm-6 mb-3">
+                                    <label for="nombreempresa">Nombre Empresa<span class="req">*</span></label>
+                                    <input type="text" id="nombreempresa" name="nombreempresa" required class="form-control" placeholder="Ingrese el nombre">
+                                </div>
+                                <div class="col-12 col-sm-6 mb-3">
+                                  <label for="teleemp">Telefono Empresa<span class="req">*</span></label>
+                                  <input type="text" id="teleemp" name="teleemp" class="form-control" required autocomplete="on" placeholder="Ingrese el teléfono"/>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                                
+                                <div class="col-12 col-sm-6 mb-3">
+                                    <label for="correo">Correo Empresa<span class="req">*</span></label>
+                                    <input type="email" id="correoemp" name="correoemp" class="form-control" required autocomplete="off" placeholder="Ingrese el correo"/>
+                                </div>
+                                <div class="col-12 col-sm-6 mb-3">
+                                  <label for="persona|">Nombre Persona<span class="req">*</span></label>
+                                  <input type="persona" id="nombrepersona" name="nombrepersona" class="form-control" required autocomplete="off" placeholder="Ingrese el nombre"/>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-12 col-sm-6 mb-3">
+                                <label for="teleper">Telefono Persona<span class="req">*</span></label>
+                                <input type="text" id="teleper" name="teleper" class="form-control" required autocomplete="on" placeholder="Ingrese el teléfono"/>
+                              </div>
+                              <div class="col-12 col-sm-6 mb-3">
+                                <label for="correoper">Correo Persona<span class="req">*</span></label>
+                                <input type="email" id="correoper" name="correoper" class="form-control" required autocomplete="off" placeholder="Ingrese el correo"/>
+                            </div>
+                            </div>
+
+                          
+                            <div class="row">
+                                <div class="col-12 col-sm-6 mb-3">
+                                  <label for="cargo">Cargo</label>
+                                  <input type="text" id="cargo" name="cargo" class="form-control" autocomplete="on" placeholder="Ingrese el cargo"/>
+                                </div>
+                                <div class="col-12 col-sm-6 mb-3">
+                                  <label for="profesion">Profesión<span class="req">*</span></label>
+                                  <select name="profesion" id="profesion" class="form-select">
+                                    <option value="">Seleccione...</option>  
+                                    <option value="industrial">Ing. Industrial</option>
+                                    <option value="mecanica">Ing. Mecánica</option>
+                                    <option value="mecatro">Ing. Mecátronica</option>
+                                    <option value="mgica">Ing. Metalúrgica</option>
+                                    <option value="quimica">Ing. Química</option>
+                                  </select>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-12 col-sm-6 mb-3">
+                                <label>Clasificación<span class="req">*</span></label>
+                                  <select name="clasificacion" id="clasificacion" class="form-select">
+                                      <option value="">Seleccione...</option>
+                                      <option value="clienteant">Cliente Antiguo</option>
+                                      <option value="clientenew">Cliente nuevo</option>
+                                      <option value="Lead">Prospecto</option>
+                                  </select>
+                              </div>
+                              <div class="col-12 col-sm-6 mb-3">
+                                <label for="pais">Pais<span class="req">*</span></label>
+                                <select name="pais" id="pais" class="form-select">
+                                  <option value="">Seleccione...</option>
+                                  <option value="brasil">Brasil</option>
+                                  <option value="chile">Chile</option>
+                                  <option value="colombia">Colombia</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                                
+                                <div class="col-12 col-sm-6 mb-3">
+                                    <label for="ciudad">Ciudad<span class="req">*</span></label>
+                                    <select name="ciudad" id="ciudad" class="form-select">
+                                      <option value="">Seleccione...</option>
+                                      <option value="bermeja">Barrancabermeja</option>
+                                      <option value="bogota">Bogota</option>
+                                      <option value="Brasilia">Brasilia</option>
+                                      <option value="bmanga">Bucaramanga</option>
+                                      <option value="Cali">Cali</option>
+                                      <option value="Medellin">Medellin</option>
+                                      <option value="riodejaneiro">Rio de Janeiro</option>
+                                      <option value="SantiagodeChile">Santiago de Chile</option>
+                                      <option value="Saopaulo">Sao Paulo</option>
+                                      <option value="Vina">Viña del mar</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 col-sm-6 mb-3">
+                                  <label for="rut">Rut<span class="req">*</span></label>
+                                  <input type="text" name="rut" id="rut" class="form-control" required autocomplete="on" placeholder="Ingrese el rut"/>
+                                </div>
+                                
+                            </div>
+
+                            
+                            <div class="row">
+                                <div class="col-12 col-sm-12 mb-3">
+                                    <label for="intereses" class="form-label">Intereses<span class="req">*</span></label>
+                                    <textarea class="form-control" id="intereses" name="intereses" rows="3" required></textarea>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-12 col-sm-3 mb-3">
+                                  <label>Estado del contacto<span class="req">*</span></label>
+                                  <select name="estado" id="estado" class="form-select">
+                                      <option value="A">Activo</option>
+                                      <option value="I">Inactivo</option>
+                                  </select>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+>>>>>>> ca8604ebf4e96e69a5362f4d43f0356c8af55dc4
                       <div class="card-body">
                           <table class="table table-primary table-striped table-hover" name="tblCursos">
                               <thead>
