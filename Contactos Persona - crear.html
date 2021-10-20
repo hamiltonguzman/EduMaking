@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <link rel="icon" href="Imagen/Logo.png">
   <title>EduMaking-CRM - Contacto Persona</title>
 </head>
@@ -54,13 +55,11 @@
                   </div>
                   <div class="col-12 col-sm-6 mb-3">
                     <label for="nombreempresa">Nombre Empresa<span class="req">*</span></label>
-                    <input type="text" id="nombrempresa" name="nombrempresa" required class="form-control"
-                      placeholder="Ingrese el nombre">
+                    <input type="text" id="nombrempresa" name="nombrempresa" required class="form-control" placeholder="Ingrese el nombre">
                   </div>
                   <div class="col-12 col-sm-6 mb-3">
                     <label for="teleemp">Telefono Empresa<span class="req">*</span></label>
-                    <input type="text" id="teleemp" name="teleemp" class="form-control" required autocomplete="on"
-                      placeholder="Ingrese el teléfono" />
+                    <input type="text" id="teleemp" name="teleemp" class="form-control" required autocomplete="on" placeholder="Ingrese el teléfono" />
                   </div>
                 </div>
 
@@ -68,8 +67,7 @@
 
                   <div class="col-12 col-sm-6 mb-3">
                     <label for="correo">Correo Empresa<span class="req">*</span></label>
-                    <input type="email" id="correoemp" name="correoemp" class="form-control" required autocomplete="off"
-                      placeholder="Ingrese el correo" />
+                    <input type="email" id="correoemp" name="correoemp" class="form-control" required autocomplete="off" placeholder="Ingrese el correo" />
                   </div>
                   <div class="col-12 col-sm-6 mb-3">
                     <label for="persona|">Nombre Persona<span class="req">*</span></label>
@@ -81,32 +79,23 @@
                 <div class="row">
                   <div class="col-12 col-sm-6 mb-3">
                     <label for="teleper">Telefono Persona<span class="req">*</span></label>
-                    <input type="text" id="teleper" name="teleper" class="form-control" required autocomplete="on"
-                      placeholder="Ingrese el teléfono" />
+                    <input type="text" id="teleper" name="teleper" class="form-control" required autocomplete="on" placeholder="Ingrese el teléfono" />
                   </div>
                   <div class="col-12 col-sm-6 mb-3">
                     <label for="correoper">Correo Persona<span class="req">*</span></label>
-                    <input type="email" id="correoper" name="correoper" class="form-control" required autocomplete="off"
-                      placeholder="Ingrese el correo" />
+                    <input type="email" id="correoper" name="correoper" class="form-control" required autocomplete="off" placeholder="Ingrese el correo" />
                   </div>
                 </div>
-
 
                 <div class="row">
                   <div class="col-12 col-sm-6 mb-3">
                     <label for="cargo">Cargo</label>
-                    <input type="text" id="cargo" name="cargo" class="form-control" autocomplete="on"
-                      placeholder="Ingrese el cargo" />
+                    <input type="text" id="cargo" name="cargo" class="form-control" autocomplete="on" placeholder="Ingrese el cargo" />
                   </div>
                   <div class="col-12 col-sm-6 mb-3">
                     <label for="profesion">Profesión<span class="req">*</span></label>
                     <select name="profesion" id="profesion" class="form-select">
                       <option value="">Seleccione...</option>
-                      <option value="industrial">Ing. Industrial</option>
-                      <option value="mecanica">Ing. Mecánica</option>
-                      <option value="mecatro">Ing. Mecátronica</option>
-                      <option value="mgica">Ing. Metalúrgica</option>
-                      <option value="quimica">Ing. Química</option>
                     </select>
                   </div>
                 </div>
@@ -123,11 +112,8 @@
                   </div>
                   <div class="col-12 col-sm-6 mb-3">
                     <label for="pais">Pais<span class="req">*</span></label>
-                    <select name="pais" id="pais" class="form-select">
+                    <select name="pais" id="pais" class="form-select" onchange="getCiudades()">
                       <option value="">Seleccione...</option>
-                      <option value="brasil">Brasil</option>
-                      <option value="chile">Chile</option>
-                      <option value="colombia">Colombia</option>
                     </select>
                   </div>
                 </div>
@@ -137,23 +123,12 @@
                   <div class="col-12 col-sm-6 mb-3">
                     <label for="ciudad">Ciudad<span class="req">*</span></label>
                     <select name="ciudad" id="ciudad" class="form-select">
-                      <option value="">Seleccione...</option>
-                      <option value="bermeja">Barrancabermeja</option>
-                      <option value="bogota">Bogota</option>
-                      <option value="Brasilia">Brasilia</option>
-                      <option value="bmanga">Bucaramanga</option>
-                      <option value="Cali">Cali</option>
-                      <option value="Medellin">Medellin</option>
-                      <option value="riodejaneiro">Rio de Janeiro</option>
-                      <option value="SantiagodeChile">Santiago de Chile</option>
-                      <option value="Saopaulo">Sao Paulo</option>
-                      <option value="Vina">Viña del mar</option>
+                        <option value="">Seleccione...</option>
                     </select>
                   </div>
                   <div class="col-12 col-sm-6 mb-3">
                     <label for="rut">Rut<span class="req">*</span></label>
-                    <input type="text" name="rut" id="rut" class="form-control" required autocomplete="on"
-                      placeholder="Ingrese el rut" />
+                    <input type="text" name="rut" id="rut" class="form-control" required autocomplete="on" placeholder="Ingrese el rut" />
                   </div>
 
                 </div>
@@ -185,7 +160,6 @@
                     <button type="submit" class="btn btn-primary">Registrar</button>
                   </div>
                   <div class="boton col-sm-4">
-                    <!--<button type="submit" class="btn btn-secondary">Volver al Listado</button>-->
                     <a class="btn btn-info" href="Contactos Persona.html" role="button">Volver al Listado</a>
                   </div>
                 </div>
@@ -208,30 +182,31 @@
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <script src="js/app.js"></script>
+
   <script>
     /* Obtener datos para llenar el select de profesiones */
-    const OBJ_INSTR = document.getElementById('Profesion');
-    const API_URL_PROFESIONES = '//localhost:8080/api/profesiones'
+    const API_URL_PROFESIONES = '//localhost:8080/api/profesiones';
 
     fetch(`${API_URL_PROFESIONES + '/listar'}`)
       .then(response => response.json())
       .then(data => fillProfesion(data))
       .catch(error => console.log(error))
 
-    function fillProfesion(instrJson) {
-      for (let instr of instrJson) {
+    function fillProfesion(profJson) {
+      for (let prof of profJson) {
         let newOption = document.createElement("option");
-        newOption.value = instr.id;
-        newOption.text = instr.nombre;
-        OBJ_INSTR.add(newOption);
+        newOption.value = prof.id;
+        newOption.text = prof.nombre;
+        profesion.add(newOption);
       }
     }
 
-    /* Obtener datos para llenar el select de ciudades */
-    const OBJ_INSTR = document.getElementById('Ciudad');
-    const API_URL_CIUDADES = '//localhost:8080/api/ciudades'
 
-    fetch(`${API_URL_CIUDADES + '/listar'}`)
+    /* Obtener datos para llenar el select de paises */
+    const OBJ_PAIS = document.getElementById('pais');
+    const API_URL_PAISES = '//localhost:8080/api/paises';
+
+    fetch(`${API_URL_PAISES + '/listar'}`)
       .then(response => response.json())
       .then(data => fillCiudad(data))
       .catch(error => console.log(error))
@@ -241,28 +216,39 @@
         let newOption = document.createElement("option");
         newOption.value = instr.id;
         newOption.text = instr.nombre;
-        OBJ_INSTR.add(newOption);
+        OBJ_PAIS.add(newOption);
       }
     }
 
-      /* Obtener datos para llenar el select de paises */
-      const OBJ_INSTR = document.getElementById('Pais');
-      const API_URL_PAISES = '//localhost:8080/api/paises'
 
-      fetch(`${API_URL_PAISES + '/listar'}`)
+    /* Obtenemos las ciudades del pais seleccionado */
+    function getCiudades() {
+      const API_URL_CIUDADES = '//localhost:8080/api/ciudades';
+      const OBJ_CIUDAD = document.getElementById('ciudad');
+
+      let idPais = pais.value;
+      ciudad.options.length = 0;
+      let newOption = document.createElement("option");
+      newOption.value = "";
+      newOption.text = "Seleccione...";
+      OBJ_CIUDAD.add(newOption);
+
+      fetch(`${API_URL_CIUDADES + '/listar'}`)
         .then(response => response.json())
-        .then(data => fillCiudad(data))
+        .then(data => fillCiudades(data))
         .catch(error => console.log(error))
 
-      function fillCiudad(instrJson) {
-        for (let instr of instrJson) {
-          let newOption = document.createElement("option");
-          newOption.value = instr.id;
-          newOption.text = instr.nombre;
-          OBJ_INSTR.add(newOption);
-        }
+      function fillCiudades(ciudadesJson) {
+          for (let ciudad of ciudadesJson) {
+              if (idPais == ciudad.pais.id) {
+                let newOption = document.createElement("option");
+                newOption.value = ciudad.idciudad;
+                newOption.text = ciudad.nombre;
+                OBJ_CIUDAD.add(newOption);
+              }
+          }
       }
-
+    }
 
 
     /* Guardamos los datos del formulario */
@@ -274,22 +260,29 @@
       let transactionFormData = new FormData(FORM_PERSONAS);
 
       const obj = {
-        "id": transactionFormData.get("codigo"),
-        "tipodoc": transactionFormData.get("tipodoc"),
-        "nombrempresa": transactionFormData.get("nombrempresa"),
-        "teleemp": transactionFormData.get("teleemp"),
-        "correoemp": transactionFormData.get("correoemp"),
-        "nombrepersona": transactionFormData.get("nombrepersona"),
-        "teleper": transactionFormData.get("teleper"),
-        "correoper": transactionFormData.get("correoper"),
-        "cargo": transactionFormData.get("cargo"),
-        "profesion": transactionFormData.get("profesion"),
-        "pais": transactionFormData.get("pais"),
-        "ciudad": transactionFormData.get("ciudad"),
-        "rut": transactionFormData.get("rut"),
-        "intereses": transactionFormData.get("intereses"),
-        "estado": transactionFormData.get("estado"),
-};
+        "idPersona": transactionFormData.get("cedula"),
+        "tipoDoc": transactionFormData.get("tipodoc"),
+        "nombreEmpresa": transactionFormData.get("nombrempresa"),
+        "telEmpresa": transactionFormData.get("teleemp"),
+        "emailEmpresa": transactionFormData.get("correoemp"),
+        "nombrePersona": transactionFormData.get("nombrepersona"),
+        "telPersona": transactionFormData.get("teleper"),
+        "emailPersona": transactionFormData.get("correoper"),
+        "cargoPersona": transactionFormData.get("cargo"),
+        "profesion": {
+          "id": transactionFormData.get("profesion")
+        },
+        "clasif": transactionFormData.get("clasificacion"),
+        "pais": {
+          "id": transactionFormData.get("pais")
+        },
+        "ciudad": {
+          "idciudad": transactionFormData.get("ciudad")
+        },
+        "rutPersona": transactionFormData.get("rut"),
+        "interes": transactionFormData.get("intereses"),
+        "estado": transactionFormData.get("estado")
+      };
 
       fetch(`${API_URL_PERSONAS}`, {
         method: "POST",
@@ -312,32 +305,6 @@
         })
         .catch((error) => console.error("Error:", error));
     })
-
-
-    /* Valido si el código de curso ya existe */
-    function validaCurso(e) {
-      let codPersona = document.getElementById('codigo').value;
-
-      fetch(`${API_URL_PERSONAS + codPersona}`)
-        .then(response => response.json())
-        .then(data => fillFields(data))
-        .catch(error => console.log(error))
-
-      function fillFields(personasJson) {
-        if (personasJson) {
-          swal({
-            title: "ADVERTENCIA",
-            text: "¡Este cedula ya existe!",
-            icon: "warning",
-            type: "danger"
-          }).then(function () {
-            FORM_PERSONAS.reset();
-            codigo.focus();
-          });
-        }
-      }
-
-    }
 
   </script>
 </body>

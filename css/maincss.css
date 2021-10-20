@@ -299,6 +299,86 @@ input:focus {
   width: 2%;
 }
 
+th {
+  font-size: 80% !important;
+}
+
+td {
+  font-size: 80% !important;
+}
+
+#col1_pers {
+  width: 1%;
+}
+
+#col2_pers {
+  width: 5%;
+}
+
+#col3_pers {
+  width: 10%;
+}
+
+#col4_pers {
+  width: 4%;
+}
+
+#col5_pers {
+  width: 8%;
+}
+
+#col6_pers {
+  width: 15%;
+}
+
+#col7_pers {
+  width: 6%;
+}
+
+#col8_pers {
+  width: 8%;
+}
+
+#col9_pers {
+  width: 5%;
+}
+
+#col10_pers {
+  width: 1%;
+}
+
+#col11_pers {
+  width: 15%;
+}
+
+#col12_pers {
+  width: 5%;
+}
+
+#col13_pers {
+  width: 1%;
+}
+
+#col14_pers {
+  width: 1%;
+}
+
+#col15_pers {
+  width: 8%;
+}
+
+#col16_pers {
+  width: 10%;
+}
+
+#col17_pers {
+  width: 5%;
+}
+
+#col18_pers {
+  width: 1%;
+}
+
 /*#modal fade {
   width: 100%;
 }*/

@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="icon" href="Imagen/Logo.png">
     <title>EduMaking-CRM - Contacto Persona</title>
 </head> 
@@ -39,28 +41,25 @@
                           <table class="table table-primary table-striped table-hover" name="tblPersonas">
                               <thead>
                                   <tr>
-                                      <th scope="col" id="col1_persona">Id.</th>
-                                      <th scope="col" id="col1_persona">Tipo Doc.</th>
-                                      <th scope="col" id="col2_persona">Nombre Empresa</th>
-                                      <th scope="col" id="col3_persona">Télefono</th>
-                                      <th scope="col" id="col4_persona">Email Empresa</th>
-                                      <th scope="col" id="col4_persona">Nombre Persona</th>
-                                      <th scope="col" id="col4_persona">Telef.</th>
-                                      <th scope="col" id="col4_persona">email persona</th>
-                                      <th scope="col" id="col4_persona">cargo</th>
-                                      <th scope="col" id="col4_persona">Id. Prof.</th>
-                                      <th scope="col" id="col4_persona">Profesion</th>
-                                      <th scope="col" id="col4_persona">clasificacion</th>
-                                      <th scope="col" id="col4_persona">Pais</th>
-                                      <th scope="col" id="col4_persona">Id. Ciudad</th>
-                                      <th scope="col" id="col4_persona">Nombre Ciudad</th>
-                                      <th scope="col" id="col4_persona">Rut</th>
-
-                                      
-
-Interes
-estado_persona
-
+                                      <th scope="col" id="col1_pers"></th>
+                                      <th scope="col" id="col2_pers">No. Id.</th>
+                                      <th scope="col" id="col3_pers">Nombre Empresa</th>
+                                      <th scope="col" id="col4_pers">Teléfono</th>
+                                      <th scope="col" id="col5_pers">Email Empresa</th>
+                                      <th scope="col" id="col6_pers">Nombre Persona</th>
+                                      <th scope="col" id="col7_pers">Telef.</th>
+                                      <th scope="col" id="col8_pers">email persona</th>
+                                      <th scope="col" id="col9_pers">Cargo</th>
+                                      <th scope="col" id="col10_pers"></th>
+                                      <th scope="col" id="col11_pers">Profesion</th>
+                                      <th scope="col" id="col12_pers">clasificacion</th>
+                                      <th scope="col" id="col13_pers">Pais</th>
+                                      <th scope="col" id="col14_pers"></th>
+                                      <th scope="col" id="col15_pers">Ciudad</th>
+                                      <th scope="col" id="col16_pers">Rut</th>
+                                      <th scope="col" id="col17_pers">Interes</th>
+                                      <th scope="col" id="col18_pers">Estado</th>
+                                      <th scope="col" id="col19_pers">Editar</th>
                                   </tr>
                               </thead>
                               <tbody>
@@ -93,23 +92,22 @@ estado_persona
                             <div class="row">
                                 <div class="col-12 col-sm-6 mb-3">
                                   <label for="cedula">Cedula<span class="req">*</span></label>
-                                  <input type="text" id="cedula" name="cedula" required class="form-control" autocomplete="on"
-                                    placeholder="Ingrese documento">
+                                  <input type="text" id="cedula" name="cedula" required class="form-control" disabled>
                                 </div>
                                 <div class="col-12 col-sm-6 mb-3">
                                   <label for="tipodoc">Tipo Documento</label>
                                   <select name="tipodoc" id="tipodoc" class="form-select">
                                     <option value="">Seleccione...</option>
-                                    <option value="cc">CC</option>
-                                    <option value="ce">CE</option>
-                                    <option value="nit">NIT</option>
-                                    <option value="nitcc">NITCC</option>
-                                    <option value="regciv">REGCIV</option>
-                                    <option value="ti">TI</option>
+                                    <option value="CC">CC</option>
+                                    <option value="CE">CE</option>
+                                    <option value="NIT">NIT</option>
+                                    <option value="NITCC">NITCC</option>
+                                    <option value="REGCIV">REGCIV</option>
+                                    <option value="TI">TI</option>
                                   </select>
                                 </div>
                                 <div class="col-12 col-sm-6 mb-3">
-                                  <label for="nombreempresa">Nombre Empresa<span class="req">*</span></label>
+                                  <label for="nombrempresa">Nombre Empresa<span class="req">*</span></label>
                                   <input type="text" id="nombrempresa" name="nombrempresa" required class="form-control"
                                     placeholder="Ingrese el nombre">
                                 </div>
@@ -123,13 +121,13 @@ estado_persona
                               <div class="row">
               
                                 <div class="col-12 col-sm-6 mb-3">
-                                  <label for="correo">Correo Empresa<span class="req">*</span></label>
+                                  <label for="correoemp">Correo Empresa<span class="req">*</span></label>
                                   <input type="email" id="correoemp" name="correoemp" class="form-control" required autocomplete="off"
                                     placeholder="Ingrese el correo" />
                                 </div>
                                 <div class="col-12 col-sm-6 mb-3">
-                                  <label for="persona|">Nombre Persona<span class="req">*</span></label>
-                                  <input type="persona" id="nombrepersona" name="nombrepersona" class="form-control" required autocomplete="off"
+                                  <label for="nombrepersona">Nombre Persona<span class="req">*</span></label>
+                                  <input type="text" id="nombrepersona" name="nombrepersona" class="form-control" required autocomplete="off"
                                     placeholder="Ingrese el nombre" />
                                 </div>
                               </div>
@@ -158,18 +156,13 @@ estado_persona
                                   <label for="profesion">Profesión<span class="req">*</span></label>
                                   <select name="profesion" id="profesion" class="form-select">
                                     <option value="">Seleccione...</option>
-                                    <option value="industrial">Ing. Industrial</option>
-                                    <option value="mecanica">Ing. Mecánica</option>
-                                    <option value="mecatro">Ing. Mecátronica</option>
-                                    <option value="mgica">Ing. Metalúrgica</option>
-                                    <option value="quimica">Ing. Química</option>
                                   </select>
                                 </div>
                               </div>
               
                               <div class="row">
                                 <div class="col-12 col-sm-6 mb-3">
-                                  <label>Clasificación<span class="req">*</span></label>
+                                  <label for="clasificacion">Clasificación<span class="req">*</span></label>
                                   <select name="clasificacion" id="clasificacion" class="form-select">
                                     <option value="">Seleccione...</option>
                                     <option value="clienteant">Cliente Antiguo</option>
@@ -179,11 +172,8 @@ estado_persona
                                 </div>
                                 <div class="col-12 col-sm-6 mb-3">
                                   <label for="pais">Pais<span class="req">*</span></label>
-                                  <select name="pais" id="pais" class="form-select">
+                                  <select name="pais" id="pais" class="form-select" onchange="getCiudades()">
                                     <option value="">Seleccione...</option>
-                                    <option value="brasil">Brasil</option>
-                                    <option value="chile">Chile</option>
-                                    <option value="colombia">Colombia</option>
                                   </select>
                                 </div>
                               </div>
@@ -194,16 +184,6 @@ estado_persona
                                   <label for="ciudad">Ciudad<span class="req">*</span></label>
                                   <select name="ciudad" id="ciudad" class="form-select">
                                     <option value="">Seleccione...</option>
-                                    <option value="bermeja">Barrancabermeja</option>
-                                    <option value="bogota">Bogota</option>
-                                    <option value="Brasilia">Brasilia</option>
-                                    <option value="bmanga">Bucaramanga</option>
-                                    <option value="Cali">Cali</option>
-                                    <option value="Medellin">Medellin</option>
-                                    <option value="riodejaneiro">Rio de Janeiro</option>
-                                    <option value="SantiagodeChile">Santiago de Chile</option>
-                                    <option value="Saopaulo">Sao Paulo</option>
-                                    <option value="Vina">Viña del mar</option>
                                   </select>
                                 </div>
                                 <div class="col-12 col-sm-6 mb-3">
@@ -214,7 +194,6 @@ estado_persona
               
                               </div>
               
-              
                               <div class="row">
                                 <div class="col-12 col-sm-12 mb-3">
                                   <label for="intereses" class="form-label">Intereses<span class="req">*</span></label>
@@ -224,15 +203,18 @@ estado_persona
               
                               <div class="row">
                                 <div class="col-12 col-sm-3 mb-3">
-                                  <label>Estado del contacto<span class="req">*</span></label>
+                                  <label for="estado">Estado del contacto<span class="req">*</span></label>
                                   <select name="estado" id="estado" class="form-select">
-                                    <option value="A">Activo</option>
-                                    <option value="I">Inactivo</option>
+                                    <option value="ACTIVO">Activo</option>
+                                    <option value="INACTIVO">Inactivo</option>
                                   </select>
                                 </div>
                               </div>
                             </div>
-              
+                            <div class="modal-footer">
+                              <button type="submit" class="btn btn-primary">Actualizar</button>
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                          </div>
                         </form>
                     </div>
                 </div>
@@ -244,12 +226,29 @@ estado_persona
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="js/app.js"></script>
-
     <script>
-      const API_URL_PERSONAS = '//localhost:8080/api/personas/'
-      const MODAL_PERSONA = new bootstrap.Modal(document.getElementById('modalPersona'))
+      /* Obtener datos para llenar el select de profesiones */
+      const API_URL_PROFESIONES = '//localhost:8080/api/profesiones';
+
+      fetch(`${API_URL_PROFESIONES + '/listar'}`)
+        .then(response => response.json())
+        .then(data => fillProfesion(data))
+        .catch(error => console.log(error))
+
+      function fillProfesion(profJson) {
+        for (let prof of profJson) {
+          let newOption = document.createElement("option");
+          newOption.value = prof.id;
+          newOption.text = prof.nombre;
+          profesion.add(newOption);
+        }
+      }      
+
+      const API_URL_PERSONAS = '//localhost:8080/api/personas/';
+      const MODAL_PERSONA = new bootstrap.Modal(document.getElementById('modalPersona'));
 
       window.onload=function (){
+          
           const CONTENEDOR = document.querySelector("tbody");
           const FOOT = document.querySelector("tfoot");
           let result = '';
@@ -257,16 +256,28 @@ estado_persona
       
           const mostrar = (personas) => {
               resumen += `<tr>
-                              <td colspan="11"><strong>Total Personas: ${personas.length}</strong></td>
+                              <td colspan="19"><strong>Total Personas: ${personas.length}</strong></td>
                           </tr>`
-              personas.forEach(curso => {
+              personas.forEach(persona => {
                   result += `<tr>
-                                  <td>${persona.id}</td>
-                                  <td>${persona.nombre}</td>
-                                  <td>${persona.empresa}</td>
-                                  <td>${persona.telefono}</td>
-                                  <td>${persona.correo}</td>
-                                  <td>${persona.telefono}</td>
+                                  <td>${persona.tipoDoc}</td>
+                                  <td>${persona.idPersona}</td>
+                                  <td>${persona.nombreEmpresa}</td>
+                                  <td>${persona.telEmpresa}</td>
+                                  <td>${persona.emailEmpresa}</td>
+                                  <td>${persona.nombrePersona}</td>
+                                  <td>${persona.telPersona}</td>
+                                  <td>${persona.emailPersona}</td>
+                                  <td>${persona.cargoPersona}</td>
+                                  <td>${persona.profesion.id}</td>
+                                  <td>${persona.profesion.nombre}</td>
+                                  <td>${persona.clasif}</td>
+                                  <td>${persona.pais.id}</td>
+                                  <td>${persona.ciudad.idciudad}</td>
+                                  <td>${persona.ciudad.nombre}</td>
+                                  <td>${persona.rutPersona}</td>
+                                  <td>${persona.interes}</td>
+                                  <td>${persona.estado}</td>
                                   <td class="text-success"><i class="bi bi-pencil-square"></i></td>
                           </tr>`
               })
@@ -281,23 +292,6 @@ estado_persona
               .catch(error => console.log(error))
 
           //////////////////////////////////////////////////
-          /* Obtener datos para llenar el select de instructores */
-          const OBJ_INSTR = document.getElementById('Instructor');
-          const API_URL_PERSONAS = '//localhost:8080/api/personas/'
-
-          fetch(`${API_URL_PERSONAS + 'listar'}`)
-              .then(response => response.json())
-              .then(data => fillInstructor(data))
-              .catch(error => console.log(error))
-
-          function fillInstructor(instrJson) {
-              for (let instr of instrJson) {
-                  let newOption = document.createElement("option");
-                  newOption.value = instr.id;
-                  newOption.text = instr.nombre;
-                  OBJ_INSTR.add(newOption);
-              }
-          }
       }
 
       /* Manejador de eventos */
@@ -312,55 +306,107 @@ estado_persona
       /* Procedimiento Editar */
       on(document, 'click', '.bi-pencil-square', e => {
           let fila = e.target.parentNode.parentNode
-          let idPersona = fila.children[0].innerHTML
 
-          document.getElementById('ModalLabel').innerHTML = 'Modificación de Curso (' + idPersona + ')'
-          document.getElementById('codigo').value = idPersona;
-          document.getElementById('tipodoc').value = fila.children[1].innerHTML;
-          document.getElementById('nombreempresa').value = fila.children[2].innerHTML;
-          document.getElementById('teleemp').value = fila.children[3].innerHTML;
-          document.getElementById('correoempr').value = fila.children[4].innerHTML;
-          document.getElementById('nombrepersona').value = fila.children[5].innerHTML;
-          document.getElementById('teleper').value = fila.children[6].innerHTML;
-          document.getElementById('correoper').value = fila.children[7].innerHTML;
-          document.getElementById('cargo').value = fila.children[8].innerHTML;
-          document.getElementById('profesion').value = fila.children[9].innerHTML;
-          document.getElementById('pais').value = fila.children[10].innerHTML;
-          document.getElementById('ciudad').value = fila.children[11].innerHTML;
-          document.getElementById('rut').value = fila.children[12].innerHTML;
-          document.getElementById('intereses').value = fila.children[13].innerHTML;
-          document.getElementById('estado"').value = fila.children[14].innerHTML,
-           //window.location.href = "inscripcion-crear.html";
-          MODAL_PERSONA.show()
+          //document.getElementById('ModalLabel').innerHTML = 'Modificación de Persona';
+          cedula.value = fila.children[1].innerHTML;
+          tipodoc.value = fila.children[0].innerHTML;
+          nombrempresa.value = fila.children[2].innerHTML;
+          teleemp.value = fila.children[3].innerHTML;
+          correoemp.value = fila.children[4].innerHTML;
+          nombrepersona.value = fila.children[5].innerHTML;
+          teleper.value = fila.children[6].innerHTML;
+          correoper.value = fila.children[7].innerHTML;
+          cargo.value = fila.children[8].innerHTML;
+          profesion.value = fila.children[9].innerHTML;
+          clasificacion.value = fila.children[11].innerHTML;
+          pais.value = fila.children[12].innerHTML;
+          getCiudades();
+          ciudad.value = fila.children[13].innerHTML;
+          rut.value = fila.children[15].innerHTML;
+          intereses.value = fila.children[16].innerHTML;
+          estado.value = fila.children[17].innerHTML;
+
+          MODAL_PERSONA.show();
           
       })
+
+
+      /* Obtener datos para llenar el select de paises */
+      const OBJ_PAIS = document.getElementById('pais');
+      const API_URL_PAISES = '//localhost:8080/api/paises';
+
+      fetch(`${API_URL_PAISES + '/listar'}`)
+        .then(response => response.json())
+        .then(data => fillCiudad(data))
+        .catch(error => console.log(error))
+
+      function fillCiudad(instrJson) {
+        for (let instr of instrJson) {
+          let newOption = document.createElement("option");
+          newOption.value = instr.id;
+          newOption.text = instr.nombre;
+          OBJ_PAIS.add(newOption);
+        }
+      }
+
+
+      /* Obtenemos las ciudades del pais seleccionado */
+      function getCiudades() {
+        const API_URL_CIUDADES = '//localhost:8080/api/ciudades';
+        const OBJ_CIUDAD = document.getElementById('ciudad');
+
+        let idPais = pais.value;
+        ciudad.options.length = 0;
+        let newOption = document.createElement("option");
+        newOption.value = "";
+        newOption.text = "Seleccione...";
+        OBJ_CIUDAD.add(newOption);
+
+        fetch(`${API_URL_CIUDADES + '/listar'}`)
+          .then(response => response.json())
+          .then(data => fillCiudades(data))
+          .catch(error => console.log(error))
+
+        function fillCiudades(ciudadesJson) {
+            for (let ciudad of ciudadesJson) {
+                if (idPais == ciudad.pais.id) {
+                  let newOption = document.createElement("option");
+                  newOption.value = ciudad.idciudad;
+                  newOption.text = ciudad.nombre;
+                  OBJ_CIUDAD.add(newOption);
+                }
+            }
+        }
+      }
+
 
 
       /* Actualizamos los datos de persona del formulario modal */
       const FORM_MODAL = document.getElementById("frmModalPersona");
       FORM_MODAL.addEventListener('submit', (e)=>{
           e.preventDefault()
-          //const MODAL_CURSO = new bootstrap.Modal(document.getElementById('modalCurso'))
          
-          let idCurso = document.getElementById('codigo').value;
+          //let idPersona = document.getElementById('cedula').value;
+          let idPersona = cedula.value;
           let modalFormData = new FormData(FORM_MODAL);
 
           const objUpd = {
-            "id": transactionFormData.get("codigo"),
-            "tipodoc": transactionFormData.get("tipodoc"),
-            "nombrempresa": transactionFormData.get("nombrempresa"),
-            "teleemp": transactionFormData.get("teleemp"),
-            "correoemp": transactionFormData.get("correoemp"),
-            "nombrepersona": transactionFormData.get("nombrepersona"),
-            "teleper": transactionFormData.get("teleper"),
-            "correoper": transactionFormData.get("correoper"),
-            "cargo": transactionFormData.get("cargo"),
-            "profesion": transactionFormData.get("profesion"),
-            "pais": transactionFormData.get("pais"),
-            "ciudad": transactionFormData.get("ciudad"),
-            "rut": transactionFormData.get("rut"),
-            "intereses": transactionFormData.get("intereses"),
-            "estado": transactionFormData.get("estado"),
+            "tipoDoc": modalFormData.get("tipodoc"),
+            "nombreEmpresa": modalFormData.get("nombrempresa"),
+            "telEmpresa": modalFormData.get("teleemp"),
+            "emailEmpresa": modalFormData.get("correoemp"),
+            "nombrePersona": modalFormData.get("nombrepersona"),
+            "telPersona": modalFormData.get("teleper"),
+            "emailPersona": modalFormData.get("correoper"),
+            "cargoPersona": modalFormData.get("cargo"),
+            "profesion": {"id": modalFormData.get("profesion")},
+            "clasif": modalFormData.get("clasificacion"),
+            "pais": {"id": modalFormData.get("pais")},
+            "ciudad": {"idciudad": modalFormData.get("ciudad")},
+            "rutPersona": modalFormData.get("rut"),
+            "interes": modalFormData.get("intereses"),
+            "estado": modalFormData.get("estado")
+
           };
 
           fetch(`${API_URL_PERSONAS + 'actualizar/' + idPersona}`, {
